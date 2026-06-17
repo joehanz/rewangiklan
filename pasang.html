@@ -93,28 +93,28 @@ const API_URL = "https://script.google.com/macros/s/AKfycbx9SNQC_4tLDYObDuwQ-BHJ
 
 function kirimIklan(){
 
-let data = {
-nama: document.getElementById("nama").value,
-wa: document.getElementById("wa").value,
-judul: document.getElementById("judul").value,
-deskripsi: document.getElementById("deskripsi").value,
-harga: document.getElementById("harga").value,
-kategori: document.getElementById("kategori").value
-};
+  let data = {
+    nama: document.getElementById("nama").value,
+    wa: document.getElementById("wa").value,
+    judul: document.getElementById("judul").value,
+    deskripsi: document.getElementById("deskripsi").value,
+    harga: document.getElementById("harga").value,
+    kategori: document.getElementById("kategori").value
+  };
 
-fetch(API_URL, {
-method: "POST",
-body: JSON.stringify(data)
-})
-.then(res => res.text())
-.then(res => {
-alert("Iklan berhasil dikirim!");
-window.location.href = "index.html";
-})
-.catch(err => {
-alert("Gagal kirim iklan");
-console.log(err);
-});
+  fetch(API_URL, {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(res => res.text())
+  .then(res => {
+    alert("Iklan berhasil dikirim!");
+    window.location.href = "index.html";
+  })
+  .catch(err => {
+    alert("Gagal kirim iklan");
+    console.log(err);
+  });
 
 }
 </script>
