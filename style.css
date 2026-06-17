@@ -1443,8 +1443,8 @@ overflow-x:hidden;
 }
 
 .ads-slot img{
-  display:block;
+  display:cover;
   width:300px;
   height:300px;
-  object-fit:block;
+  object-fit:cover;
 }
