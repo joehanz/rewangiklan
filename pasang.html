@@ -104,17 +104,16 @@ function kirimIklan(){
 
   fetch(API_URL, {
     method: "POST",
-    body: JSON.stringify(data)
-  })
-  .then(res => res.text())
-  .then(res => {
-    alert("Iklan berhasil dikirim!");
-    window.location.href = "index.html";
-  })
-  .catch(err => {
-    alert("Gagal kirim iklan");
-    console.log(err);
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8"
+    },
+    mode: "no-cors"
   });
+
+  alert("Iklan dikirim!");
+
+  window.location.href = "index.html";
 
 }
 </script>
