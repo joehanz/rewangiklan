@@ -8,7 +8,7 @@
 <style>
 body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:Arial,sans-serif;
 background:#0f172a;
 color:#fff;
 }
@@ -19,6 +19,7 @@ text-align:center;
 background:#111827;
 position:sticky;
 top:0;
+z-index:99;
 }
 
 header h1{
@@ -34,9 +35,9 @@ margin-top:10px;
 width:90%;
 max-width:500px;
 padding:10px;
-border-radius:8px;
 border:none;
 outline:none;
+border-radius:8px;
 }
 
 .container{
@@ -50,7 +51,7 @@ padding:20px;
 background:#1e293b;
 padding:15px;
 border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
+box-shadow:0 5px 15px rgba(0,0,0,.3);
 }
 
 .card h3{
@@ -60,13 +61,14 @@ font-size:16px;
 
 .card p{
 font-size:14px;
-opacity:0.9;
+opacity:.9;
 }
 
 .price{
-color:#22c55e;
-font-weight:bold;
 margin:10px 0;
+font-weight:bold;
+color:#22c55e;
+font-size:18px;
 }
 
 .btn{
@@ -76,8 +78,8 @@ background:#22c55e;
 color:#000;
 border-radius:8px;
 text-decoration:none;
-font-size:13px;
 font-weight:bold;
+font-size:13px;
 }
 
 .fab{
@@ -86,18 +88,23 @@ right:20px;
 bottom:20px;
 background:#3b82f6;
 color:#fff;
-padding:15px;
+padding:15px 20px;
 border-radius:50px;
 text-decoration:none;
-font-size:14px;
-box-shadow:0 5px 15px rgba(0,0,0,0.4);
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,.4);
+}
+
+.loading{
+padding:30px;
+text-align:center;
 }
 
 footer{
-text-align:center;
 padding:20px;
+text-align:center;
 font-size:12px;
-opacity:0.7;
+opacity:.7;
 }
 </style>
 </head>
@@ -106,35 +113,150 @@ opacity:0.7;
 
 <header>
 <h1>📢 Iklan Baris Online</h1>
+
 <div class="search">
-<input type="text" placeholder="Cari iklan...">
+<input type="text" id="searchInput" placeholder="Cari iklan...">
 </div>
+
 </header>
 
 <div class="container" id="listIklan">
 
-<!-- CONTOH IKLAN (STATIC DULU) -->
-<div class="card">
-<h3>Telur Ayam Kampung Segar</h3>
-<p>Telur langsung dari peternakan, fresh setiap hari.</p>
-<div class="price">Rp 4.500 / butir</div>
-<a class="btn" href="https://wa.me/6281234567890" target="_blank">Chat WhatsApp</a>
-</div>
-
-<div class="card">
-<h3>Jasa Cuci Motor</h3>
-<p>Cuci motor cepat dan bersih area Surabaya.</p>
-<div class="price">Rp 15.000</div>
-<a class="btn" href="https://wa.me/6281234567890" target="_blank">Chat WhatsApp</a>
+<div class="loading">
+Memuat iklan...
 </div>
 
 </div>
 
-<a class="fab" href="pasang.html">+ Pasang Iklan</a>
+<a class="fab" href="pasang.html">
++ Pasang Iklan
+</a>
 
 <footer>
-© 2026 Iklan Baris Online - GitHub Pages
+© 2026 Iklan Baris Online
 </footer>
+
+<script>
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbxNGhXnknPcj-9sAPNVlI8qip35R-ftTbbVCgV5g6LUdSwruMqcPHl_ug69J9AGhv3x/exec";
+
+let semuaIklan = [];
+
+async function loadIklan(){
+
+try{
+
+const res = await fetch(API_URL);
+const data = await res.json();
+
+semuaIklan = data.reverse();
+
+renderIklan(semuaIklan);
+
+}catch(err){
+
+console.error(err);
+
+document.getElementById("listIklan").innerHTML =
+"<div class='loading'>Gagal memuat iklan</div>";
+
+}
+
+}
+
+function renderIklan(data){
+
+const list = document.getElementById("listIklan");
+
+if(data.length===0){
+
+list.innerHTML =
+"<div class='loading'>Belum ada iklan</div>";
+
+return;
+
+}
+
+list.innerHTML = "";
+
+data.forEach(item=>{
+
+let wa = String(item.wa || "")
+.replace(/\D/g,'');
+
+if(wa.startsWith("0")){
+wa = "62" + wa.substring(1);
+}
+
+list.innerHTML += `
+<div class="card">
+
+<h3>${item.judul || "-"}</h3>
+
+<p>${item.deskripsi || "-"}</p>
+
+<div class="price">
+Rp ${Number(item.harga || 0).toLocaleString("id-ID")}
+</div>
+
+<p>
+Kategori:
+<b>${item.kategori || "-"}</b>
+</p>
+
+<a
+class="btn"
+href="https://wa.me/${wa}"
+target="_blank">
+Chat WhatsApp
+</a>
+
+</div>
+`;
+
+});
+
+}
+
+document
+.getElementById("searchInput")
+.addEventListener("input",function(){
+
+const keyword =
+this.value.toLowerCase();
+
+const hasil =
+semuaIklan.filter(item=>{
+
+return (
+(item.judul || "")
+.toLowerCase()
+.includes(keyword)
+
+||
+
+(item.deskripsi || "")
+.toLowerCase()
+.includes(keyword)
+
+||
+
+(item.kategori || "")
+.toLowerCase()
+.includes(keyword)
+
+);
+
+});
+
+renderIklan(hasil);
+
+});
+
+loadIklan();
+
+</script>
 
 </body>
 </html>
