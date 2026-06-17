@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pasang Iklan</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#0f172a;
+color:#fff;
+}
+
+header{
+padding:20px;
+text-align:center;
+background:#111827;
+}
+
+.container{
+max-width:500px;
+margin:20px auto;
+padding:20px;
+}
+
+input, textarea, select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:none;
+outline:none;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#22c55e;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+background:#16a34a;
+}
+
+.note{
+font-size:12px;
+opacity:0.7;
+text-align:center;
+margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>📢 Pasang Iklan Baru</h2>
+</header>
+
+<div class="container">
+
+<input type="text" id="nama" placeholder="Nama Anda" required>
+<input type="text" id="wa" placeholder="Nomor WhatsApp (628xxxx)" required>
+
+<input type="text" id="judul" placeholder="Judul Iklan" required>
+
+<textarea id="deskripsi" rows="4" placeholder="Deskripsi iklan..." required></textarea>
+
+<input type="number" id="harga" placeholder="Harga (opsional)">
+
+<select id="kategori">
+<option value="produk">Produk</option>
+<option value="jasa">Jasa</option>
+<option value="lainnya">Lainnya</option>
+</select>
+
+<button onclick="kirimIklan()">Kirim Iklan</button>
+
+<div class="note">
+Data akan tersimpan di Google Sheets
+</div>
+
+</div>
+
+<script>
+const API_URL = "PASTE_URL_APPS_SCRIPT_KAMU_DI_SINI";
+
+function kirimIklan(){
+
+let data = {
+nama: document.getElementById("nama").value,
+wa: document.getElementById("wa").value,
+judul: document.getElementById("judul").value,
+deskripsi: document.getElementById("deskripsi").value,
+harga: document.getElementById("harga").value,
+kategori: document.getElementById("kategori").value
+};
+
+fetch(API_URL, {
+method: "POST",
+body: JSON.stringify(data)
+})
+.then(res => res.text())
+.then(res => {
+alert("Iklan berhasil dikirim!");
+window.location.href = "index.html";
+})
+.catch(err => {
+alert("Gagal kirim iklan");
+console.log(err);
+});
+
+}
+</script>
+
+</body>
+</html>
