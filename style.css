@@ -63,7 +63,7 @@ line-height:1.6;
 
 .header{
 
-position:sticky;
+position:fixed;
 
 top:0;
 
