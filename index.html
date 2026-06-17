@@ -3,33 +3,173 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Iklan Baris Online</title>
 
-<meta name="description" content="Pasang iklan gratis tanpa login. Marketplace lokal sederhana berbasis GitHub Pages dan Google Sheets.">
+<meta name="description" content="Marketplace gratis berbasis GitHub Pages dan Google Sheets">
 
 <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- HEADER -->
 
-<nav class="navbar">
+<header class="header">
 
-<div class="logo-area">
+<div class="header-inner">
 
-<div class="logo-icon">📢</div>
+<div class="brand">
 
-<div class="logo-text">
+<div class="brand-icon">
+📢
+</div>
+
+<div class="brand-text">
+
 <h1>Iklan Baris</h1>
-<span>Marketplace Gratis</span>
+
+<p>Marketplace Gratis Indonesia</p>
+
+</div>
+
+</div>
+
+<div class="header-tools">
+
+<div class="search-wrap">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Cari iklan..."
+autocomplete="off"
+>
+
+<div id="suggestionBox"
+class="suggestion-box">
 </div>
 
 </div>
 
-<button id="menuBtn" class="menu-btn">
+<select id="kategoriFilter">
+
+<option value="">
+Semua Kategori
+</option>
+
+<option value="tanah">
+Tanah
+</option>
+
+<option value="rumah">
+Rumah
+</option>
+
+<option value="ruko">
+Ruko
+</option>
+
+<option value="kontrakan">
+Kontrakan
+</option>
+
+<option value="kos">
+Kos
+</option>
+
+<option value="mobil">
+Mobil
+</option>
+
+<option value="motor">
+Motor
+</option>
+
+<option value="sparepart">
+Sparepart
+</option>
+
+<option value="hp">
+HP
+</option>
+
+<option value="laptop">
+Laptop
+</option>
+
+<option value="komputer">
+Komputer
+</option>
+
+<option value="tv">
+TV
+</option>
+
+<option value="fashion">
+Fashion
+</option>
+
+<option value="makanan">
+Makanan
+</option>
+
+<option value="minuman">
+Minuman
+</option>
+
+<option value="catering">
+Catering
+</option>
+
+<option value="ayam">
+Ayam
+</option>
+
+<option value="bebek">
+Bebek
+</option>
+
+<option value="telur">
+Telur
+</option>
+
+<option value="jasa">
+Jasa
+</option>
+
+<option value="arsitek">
+Arsitek
+</option>
+
+<option value="kontraktor">
+Kontraktor
+</option>
+
+<option value="desain">
+Desain
+</option>
+
+<option value="servis">
+Servis
+</option>
+
+<option value="lowongan">
+Lowongan Kerja
+</option>
+
+<option value="lainnya">
+Lainnya
+</option>
+
+</select>
+
+</div>
+
+<button
+id="menuBtn"
+class="menu-btn">
 
 <span></span>
 <span></span>
@@ -37,99 +177,96 @@
 
 </button>
 
-</nav>
+</div>
+
+</header>
 
 <!-- MOBILE MENU -->
 
-<div id="mobileMenu" class="mobile-menu">
+<div
+id="mobileMenu"
+class="mobile-menu">
 
-<div class="mobile-menu-content">
+<a href="#">
+Beranda
+</a>
 
-<a href="#">Beranda</a>
+<a href="pasang.html">
+Pasang Iklan
+</a>
 
-<a href="pasang.html">Pasang Iklan</a>
+<a href="#">
+Kategori
+</a>
 
-<a href="#">Kategori</a>
-
-<a href="#">Tentang</a>
-
-<a href="#">Kontak</a>
-
-</div>
+<a href="#">
+Kontak
+</a>
 
 </div>
 
 <!-- HERO -->
 
-<section class="hero">
+<section class="hero-mini">
 
-<div class="hero-content">
+<div class="hero-box">
 
-<h2>Pasang Iklan Gratis Tanpa Login</h2>
+<h2>
+Pasang Iklan Gratis Tanpa Login
+</h2>
 
 <p>
-Marketplace sederhana untuk jual beli produk,
-jasa, properti dan kebutuhan lokal.
+Marketplace komunitas berbasis
+GitHub Pages + Google Sheets
+yang ringan dan cepat.
 </p>
 
-<a href="pasang.html" class="hero-btn">
-Pasang Iklan Sekarang
+<a
+href="pasang.html"
+class="hero-btn">
+
+Pasang Iklan
+
 </a>
 
 </div>
 
 </section>
 
-<!-- FILTER -->
-
-<section class="filter-area">
-
-<input
-type="text"
-id="searchInput"
-placeholder="Cari produk, jasa, properti..."
->
-
-<select id="kategoriFilter">
-
-<option value="">Semua Kategori</option>
-
-<option value="produk">Produk</option>
-
-<option value="jasa">Jasa</option>
-
-<option value="properti">Properti</option>
-
-<option value="otomotif">Otomotif</option>
-
-<option value="elektronik">Elektronik</option>
-
-<option value="lainnya">Lainnya</option>
-
-</select>
-
-</section>
-
 <!-- MAIN -->
 
-<main class="layout">
+<main class="main-wrapper">
 
-<!-- LEFT ADS -->
+<!-- SIDEBAR LEFT -->
 
-<aside class="sidebar left-sidebar">
+<aside class="sidebar">
 
-<div class="sticky-ads">
+<div class="sidebar-card">
 
-<div class="ads-box">
+<div class="ads-slot">
+
 300 x 300
+
 </div>
 
-<div class="ads-box">
-300 x 300
 </div>
 
-<div class="ads-box">
+<div class="sidebar-card">
+
+<div class="ads-slot">
+
 300 x 300
+
+</div>
+
+</div>
+
+<div class="sidebar-card">
+
+<div class="ads-slot">
+
+300 x 300
+
 </div>
 
 </div>
@@ -140,46 +277,74 @@ placeholder="Cari produk, jasa, properti..."
 
 <section class="content">
 
-<div class="section-title">
+<div class="content-box">
 
-<h2>Iklan Terbaru</h2>
+<div class="section-header">
+
+<h2>
+Iklan Terbaru
+</h2>
 
 <p>
-Data otomatis dari Google Sheets
+Update otomatis dari Google Sheets
 </p>
 
 </div>
 
-<div id="loadingBox" class="loading-box">
+<div
+id="loadingBox"
+class="loading-box">
 
 Memuat iklan...
 
 </div>
 
-<div id="listIklan" class="iklan-grid">
+<div
+id="listIklan"
+class="iklan-grid">
 
-<!-- AUTO GENERATED -->
+</div>
+
+<div
+id="pagination"
+class="pagination">
+
+</div>
 
 </div>
 
 </section>
 
-<!-- RIGHT ADS -->
+<!-- SIDEBAR RIGHT -->
 
-<aside class="sidebar right-sidebar">
+<aside class="sidebar">
 
-<div class="sticky-ads">
+<div class="sidebar-card">
 
-<div class="ads-box">
+<div class="ads-slot">
+
 300 x 300
+
 </div>
 
-<div class="ads-box">
-300 x 300
 </div>
 
-<div class="ads-box">
+<div class="sidebar-card">
+
+<div class="ads-slot">
+
 300 x 300
+
+</div>
+
+</div>
+
+<div class="sidebar-card">
+
+<div class="ads-slot">
+
+300 x 300
+
 </div>
 
 </div>
@@ -194,38 +359,44 @@ Memuat iklan...
 
 <div class="footer-grid">
 
-<div class="footer-box">
+<div class="footer-card">
 
-<h3>Tentang</h3>
+<h3>
+Tentang
+</h3>
 
 <p>
-Platform iklan baris gratis berbasis
-GitHub Pages dan Google Sheets.
+Platform iklan baris gratis
+untuk komunitas dan UMKM.
 </p>
 
 </div>
 
-<div class="footer-box">
+<div class="footer-card">
 
-<h3>Kategori</h3>
+<h3>
+Kategori
+</h3>
 
 <ul>
 
-<li>Produk</li>
-<li>Jasa</li>
 <li>Properti</li>
 <li>Otomotif</li>
+<li>Elektronik</li>
+<li>Jasa</li>
+<li>Peternakan</li>
 
 </ul>
 
 </div>
 
-<div class="footer-box">
+<div class="footer-card">
 
-<h3>Kontak</h3>
+<h3>
+Kontak
+</h3>
 
 <p>
-Email:<br>
 admin@email.com
 </p>
 
