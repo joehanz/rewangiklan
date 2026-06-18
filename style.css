@@ -1025,11 +1025,11 @@ body{
 
 /* =====================================
      NO HORIZONTAL SCROLL
-  ===================================== */
+  
   body, .main-wrapper, .content, .sidebar{
     overflow-x:hidden;
 }
-
+===================================== */
   .ads-slot{
     display:flex;
     justify-content:center;
