@@ -403,15 +403,9 @@ background:#f8fafc;
 ===================================== */
 
 .hero-mini{
-
-max-width:1600px;
-
-margin:
-25px auto 0;
-
-padding:
-0 20px;
-
+  max-width:1600px;
+  margin:120px auto 0; /* ini yang bikin turun dari nav */
+  padding:0 20px;
 }
 
 .hero-box{
