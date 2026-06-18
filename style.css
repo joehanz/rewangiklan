@@ -326,43 +326,23 @@ body{
      STICKY ADS
   ===================================== */
 .sidebar{
-          position:fixed;
-          top:95px;
-          width:280px;
-          background:red !important;
-          z-index:99999;
+      position:sticky;
+      top:95px;
 }
 
-  .ads-slot{
+.ads-slot{
+     height:300px;
+     border-radius:18px;
+     border:2px dashed #cbd5e1;
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     font-weight:700;
+     font-size:18px;
+     color:#94a3b8;
+     background:linear-gradient(180deg, #fff, #f8fafc);
 
-  height:300px;
-
-  border-radius:18px;
-
-  border:
-  2px dashed
-  #cbd5e1;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  font-weight:700;
-
-  font-size:18px;
-
-  color:#94a3b8;
-
-  background:
-  linear-gradient(
-  180deg,
-  #fff,
-  #f8fafc
-  );
-
-  }
+}
 
   /* =====================================
      CONTENT
