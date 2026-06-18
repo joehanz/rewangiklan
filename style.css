@@ -327,14 +327,12 @@ body{
   /* =====================================
      STICKY ADS
   ===================================== */
-
-  .sidebar{
-
-  position:sticky;
-
-  top:95px;
-
-  }
+.sidebar{
+          position:sticky;
+          top:95px;
+          background:red !important;
+          z-index:99999;
+}
 
   .ads-slot{
 
