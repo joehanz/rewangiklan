@@ -329,8 +329,9 @@ body{
      STICKY ADS
   ===================================== */
 .sidebar{
-          position:sticky;
+          position:fixed;
           top:95px;
+          width:280px;
           background:red !important;
           z-index:99999;
 }
