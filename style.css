@@ -327,8 +327,8 @@ body{
      STICKY ADS
   ===================================== */
 .sidebar{
-      position:sticky;
-      top:95px;
+     position:sticky !important;
+     top:95px !important;
 }
 
 .ads-slot{
