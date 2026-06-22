@@ -627,3 +627,59 @@ font-size:22px;
 }
 
 }
+
+.form-layout{
+display:grid;
+grid-template-columns:420px 1fr;
+gap:25px;
+}
+
+.upload-side{
+background:#fafafa;
+padding:20px;
+border:1px solid #ddd;
+}
+
+.data-side{
+background:#fff;
+}
+
+.upload-title{
+display:block;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.preview-box{
+margin-top:15px;
+min-height:400px;
+background:#fff;
+border:2px dashed #bbb;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.preview-box img{
+width:100%;
+height:auto;
+display:block;
+}
+
+.form-row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+@media(max-width:900px){
+
+.form-layout{
+grid-template-columns:1fr;
+}
+
+.form-row{
+grid-template-columns:1fr;
+}
+
+}
