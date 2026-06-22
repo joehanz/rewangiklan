@@ -2,569 +2,491 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Pasang Iklan Gratis</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Inter',sans-serif;
-background:#f4f7fb;
-color:#1f2937;
-}
-
-.header{
-background:#fff;
-padding:18px 20px;
-box-shadow:0 2px 15px rgba(0,0,0,.05);
-position:sticky;
-top:0;
-z-index:999;
-}
-
-.header-inner{
-max-width:900px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.logo h1{
-font-size:22px;
-font-weight:800;
-}
-
-.back-btn{
-text-decoration:none;
-background:#2563eb;
-color:#fff;
-padding:10px 18px;
-border-radius:12px;
-font-weight:700;
-}
-
-.wrapper{
-max-width:900px;
-margin:30px auto;
-padding:0 15px;
-}
-
-.card{
-background:#fff;
-padding:30px;
-border-radius:24px;
-box-shadow:0 12px 30px rgba(0,0,0,.08);
-}
-
-.title{
-margin-bottom:25px;
-}
-
-.title h2{
-font-size:30px;
-font-weight:800;
-margin-bottom:8px;
-}
-
-.title p{
-color:#64748b;
-}
-
-.group{
-margin-bottom:18px;
-}
-
-label{
-display:block;
-font-weight:700;
-margin-bottom:8px;
-}
-
-input,
-select,
-textarea{
-
-width:100%;
-
-padding:14px;
-
-border:1px solid #dbe3ef;
-
-border-radius:14px;
-
-font-size:15px;
-
-outline:none;
-
-transition:.3s;
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-
-border-color:#2563eb;
-
-box-shadow:
-0 0 0 4px
-rgba(37,99,235,.12);
-
-}
-
-textarea{
-height:140px;
-resize:vertical;
-}
-
-.textarea-wrap{
-position:relative;
-}
-
-.char-counter{
-
-position:absolute;
-
-right:12px;
-
-bottom:12px;
-
-font-size:12px;
-
-color:#64748b;
-
-background:#fff;
-
-padding:2px 6px;
-
-border-radius:6px;
-
-pointer-events:none;
-
-}
-
-.previewHarga{
-
-margin-top:8px;
-
-font-weight:700;
-
-color:#16a34a;
-}
-
-.btn{
-
-width:100%;
-
-height:54px;
-
-border:none;
-
-border-radius:14px;
-
-background:
-linear-gradient(
-135deg,
-#2563eb,
-#3b82f6
-);
-
-color:#fff;
-
-font-size:16px;
-
-font-weight:800;
-
-cursor:pointer;
-
-transition:.3s;
-}
-
-.btn:hover{
-
-transform:
-translateY(-2px);
-
-}
-
-.btn:disabled{
-
-opacity:.7;
-
-cursor:not-allowed;
-
-}
-
-.toast{
-
-position:fixed;
-
-right:20px;
-
-bottom:20px;
-
-background:#16a34a;
-
-color:#fff;
-
-padding:15px 20px;
-
-border-radius:14px;
-
-font-weight:700;
-
-display:none;
-
-box-shadow:
-0 10px 25px rgba(0,0,0,.15);
-
-}
-
-@media(max-width:768px){
-
-.card{
-padding:20px;
-}
-
-.title h2{
-font-size:24px;
-}
-
-.logo h1{
-font-size:18px;
-}
-
-.back-btn{
-padding:9px 14px;
-}
-
-}
-
-</style>
 </head>
 <body>
 
-<header class="header">
+<header class="top-header">
 
-<div class="header-inner">
+<div class="logo-box">
 
-<div class="logo">
-<div>📢</div>
-<h1>Pasang Iklan</h1>
+<h1>IKLAN BARIS</h1>
+
+<p>Pasang Gratis, Jual Cepat!</p>
+
 </div>
 
-<a href="index.html" class="back-btn">
-← Kembali
+<a
+href="index.html"
+class="post-btn"
+>
+
+KEMBALI KE BERANDA
+
 </a>
-
-</div>
 
 </header>
 
-<div class="wrapper">
+<div class="form-page">
 
-<div class="card">
+<div class="form-card">
 
-<div class="title">
+<h2>
 
-<h2>Pasang Iklan Gratis</h2>
+PASANG IKLAN GRATIS
 
-<p>
-Isi data di bawah ini.
-Iklan akan langsung tampil di marketplace.
-</p>
+</h2>
 
-</div>
+<form id="adForm">
 
-<form id="iklanForm">
+<div class="form-group">
 
-<div class="group">
-<label>Nama Pengiklan</label>
+<label>
+Judul Iklan
+</label>
+
 <input
 type="text"
-id="nama"
-required>
+id="title"
+maxlength="80"
+required
+>
+
 </div>
 
-<div class="group">
-<label>Nomor WhatsApp</label>
-<input
-type="tel"
-id="wa"
-placeholder="Awali nomer dengan 62 contoh 628123456789"
-required>
-</div>
+<div class="form-group">
 
-<div class="group">
-<label>Kategori</label>
+<label>
+Kategori
+</label>
 
-<select id="kategori" required>
+<select
+id="category"
+required
+>
 
 <option value="">
 Pilih Kategori
 </option>
 
-<option>Elektronik</option>
-<option>Fashion</option>
-  
-<option>Gawai (Gadget)</option>
-  
-<option>Hewan Peliharaan</option>
-<option>Hobi</option>
-<option>Hotel</option>
-  
-<option>Kantor & Industri</option>
-<option>Komputer</option>
+<option>
+Elektronik
+</option>
 
-<option>Lowongan</option>
-<option>Lainnya</option>
-  
-<option>Mobil</option>
-<option>Motel</option>
-<option>Motor</option>
+<option>
+Kendaraan
+</option>
 
-<option>Olahraga</option>
+<option>
+Properti
+</option>
 
-<option>Properti</option>
-  
-<option>Rumah Tangga</option>
-  
-<option>Villa Losmen</option>
+<option>
+Lowongan
+</option>
 
+<option>
+Hobi
+</option>
 
+<option>
+Jasa
+</option>
+
+<option>
+Hewan
+</option>
+
+<option>
+Lainnya
+</option>
 
 </select>
 
 </div>
 
-<div class="group">
+<div class="form-group">
 
-<label>Judul Iklan</label>
+<label>
+Lokasi
+</label>
 
 <input
 type="text"
-id="judul"
-required>
+id="location"
+required
+>
 
 </div>
 
-<div class="group">
+<div class="form-group">
 
-<label>Harga</label>
+<label>
+Nomor WhatsApp
+</label>
 
 <input
-type="number"
-id="harga"
-required>
-
-<div
-class="previewHarga"
-id="previewHarga">
-
-Rp 0
+type="text"
+id="whatsapp"
+required
+>
 
 </div>
 
-</div>
+<div class="form-group">
 
-<div class="group">
-
-<label>Deskripsi</label>
-
-<div class="textarea-wrap">
+<label>
+Deskripsi Iklan
+</label>
 
 <textarea
-id="deskripsi"
-maxlength="300"
-required></textarea>
+id="description"
+maxlength="250"
+required
+></textarea>
 
 <div
-class="char-counter"
-id="charCounter">
+id="charCount"
+class="char-count"
+>
 
-0/300
+0 / 250
 
 </div>
 
 </div>
+
+<div class="form-group">
+
+<label>
+Foto Produk
+</label>
+
+<input
+type="file"
+id="imageInput"
+accept="image/*"
+required
+>
+
+<p class="help">
+
+JPG / PNG akan otomatis
+diubah menjadi WebP dan
+dikompres sebelum upload.
+
+</p>
+
+</div>
+
+<div
+id="previewBox"
+class="preview-box"
+>
+
+<img
+id="previewImage"
+>
 
 </div>
 
 <button
 type="submit"
-class="btn"
-id="submitBtn">
+class="submit-btn"
+>
 
-KIRIM IKLAN
+PASANG IKLAN
 
 </button>
 
 </form>
 
-</div>
-
-</div>
-
 <div
-class="toast"
-id="toast">
+id="statusBox"
+class="status-box"
+>
 
-Iklan berhasil dikirim
+</div>
+
+</div>
 
 </div>
 
 <script>
 
+/* =========================
+CONFIG
+========================= */
+
 const API_URL =
 "https://script.google.com/macros/s/AKfycbxNGhXnknPcj-9sAPNVlI8qip35R-ftTbbVCgV5g6LUdSwruMqcPHl_ug69J9AGhv3x/exec";
 
-const form =
+/* =========================
+CHAR COUNT
+========================= */
+
+const desc =
 document.getElementById(
-"iklanForm"
+"description"
 );
 
-const hargaInput =
+const count =
 document.getElementById(
-"harga"
+"charCount"
 );
 
-const previewHarga =
-document.getElementById(
-"previewHarga"
-);
-
-const submitBtn =
-document.getElementById(
-"submitBtn"
-);
-
-const toast =
-document.getElementById(
-"toast"
-);
-
-const deskripsi =
-document.getElementById(
-"deskripsi"
-);
-
-const charCounter =
-document.getElementById(
-"charCounter"
-);
-
-deskripsi.addEventListener(
+desc.addEventListener(
 "input",
 ()=>{
 
-const total =
-deskripsi.value.length;
-
-charCounter.innerHTML =
-`${total}/300`;
-
-if(total > 450){
-
-charCounter.style.color =
-"#dc2626";
-
-}else{
-
-charCounter.style.color =
-"#64748b";
-
-}
+count.textContent =
+desc.value.length +
+" / 250";
 
 }
 );
 
-hargaInput.addEventListener(
-"input",
-()=>{
+/* =========================
+PREVIEW
+========================= */
 
-previewHarga.innerHTML =
+let imageBase64 = "";
 
-"Rp " +
-
-Number(
-hargaInput.value || 0
-).toLocaleString(
-"id-ID"
+document
+.getElementById(
+"imageInput"
+)
+.addEventListener(
+"change",
+handleImage
 );
+
+async function handleImage(e){
+
+const file =
+e.target.files[0];
+
+if(!file)
+return;
+
+const webp =
+await convertToWebP(
+file
+);
+
+imageBase64 =
+webp;
+
+document
+.getElementById(
+"previewImage"
+)
+.src = webp;
 
 }
+
+/* =========================
+WEBP CONVERT
+========================= */
+
+function convertToWebP(file){
+
+return new Promise(
+(resolve)=>{
+
+const reader =
+new FileReader();
+
+reader.onload =
+function(ev){
+
+const img =
+new Image();
+
+img.onload =
+function(){
+
+let width =
+img.width;
+
+let height =
+img.height;
+
+const max =
+1200;
+
+if(width > max){
+
+height =
+(height * max)
+/
+width;
+
+width =
+max;
+
+}
+
+const canvas =
+document.createElement(
+"canvas"
 );
 
-form.addEventListener(
-"submit",
-function(e){
+canvas.width =
+width;
 
-e.preventDefault();
+canvas.height =
+height;
 
-submitBtn.disabled = true;
+const ctx =
+canvas.getContext(
+"2d"
+);
 
-submitBtn.innerHTML =
-"Mengirim...";
+ctx.drawImage(
+img,
+0,
+0,
+width,
+height
+);
 
-const data = {
+const data =
+canvas.toDataURL(
+"image/webp",
+0.75
+);
 
-nama:
-document.getElementById("nama").value,
-
-wa:
-document.getElementById("wa").value,
-
-judul:
-document.getElementById("judul").value,
-
-deskripsi:
-document.getElementById("deskripsi").value,
-
-harga:
-document.getElementById("harga").value,
-
-kategori:
-document.getElementById("kategori").value
+resolve(data);
 
 };
 
-fetch(API_URL,{
+img.src =
+ev.target.result;
+
+};
+
+reader.readAsDataURL(
+file
+);
+
+}
+);
+
+}
+
+/* =========================
+SUBMIT
+========================= */
+
+document
+.getElementById(
+"adForm"
+)
+.addEventListener(
+"submit",
+submitAd
+);
+
+async function submitAd(e){
+
+e.preventDefault();
+
+const status =
+document.getElementById(
+"statusBox"
+);
+
+status.innerHTML =
+"Mengirim iklan...";
+
+const payload = {
+
+title:
+document.getElementById(
+"title"
+).value,
+
+category:
+document.getElementById(
+"category"
+).value,
+
+location:
+document.getElementById(
+"location"
+).value,
+
+whatsapp:
+document.getElementById(
+"whatsapp"
+).value,
+
+description:
+document.getElementById(
+"description"
+).value,
+
+image:
+imageBase64,
+
+date:
+new Date().toISOString()
+
+};
+
+try{
+
+const res =
+await fetch(
+API_URL,
+{
 method:"POST",
-body:JSON.stringify(data),
-headers:{
-"Content-Type":
-"text/plain;charset=utf-8"
-},
-mode:"no-cors"
-});
+body:JSON.stringify(
+payload
+)
+}
+);
 
-toast.style.display =
-"block";
+const result =
+await res.text();
 
-setTimeout(()=>{
+status.innerHTML =
+"Iklan berhasil dipasang.";
 
-window.location.href =
-"index.html";
+document
+.getElementById(
+"adForm"
+)
+.reset();
 
-},2000);
+document
+.getElementById(
+"previewImage"
+)
+.src = "";
 
-});
+count.textContent =
+"0 / 250";
+
+}
+catch(err){
+
+status.innerHTML =
+"Gagal mengirim iklan.";
+
+console.error(
+err
+);
+
+}
+
+}
 
 </script>
 
