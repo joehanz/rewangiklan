@@ -255,6 +255,13 @@ end
 wrap.innerHTML =
 items.map(ad=>{
 
+const phone =
+cleanWA(
+String(
+ad.whatsapp || ""
+)
+);
+
 return `
 
 <div class="ad-card">
@@ -302,15 +309,30 @@ ad.date
 
 </div>
 
+<div class="contact-buttons">
+
 <a
-class="ad-whatsapp"
-target="_blank"
-href="https://wa.me/${cleanWA(ad.whatsapp)}"
+class="call-btn"
+href="tel:${phone}"
 >
 
-WhatsApp
+📞
+<span>Telepon</span>
 
 </a>
+
+<a
+class="wa-btn"
+target="_blank"
+href="https://wa.me/${phone}"
+>
+
+🟢
+<span>WhatsApp</span>
+
+</a>
+
+</div>
 
 </div>
 
