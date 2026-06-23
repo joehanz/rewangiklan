@@ -324,7 +324,20 @@ href="tel:${phone}"
 <a
 class="wa-btn"
 target="_blank"
-href="https://wa.me/${phone}"
+href="https://wa.me/${phone}?text=${encodeURIComponent(
+`Halo.
+
+Saya melihat iklan:
+
+${safe(ad.title)}
+
+di situs:
+https://joehanz.github.io/iklanbaris/
+
+Saya tertarik dan ingin mengetahui informasi lebih lanjut.
+
+Terima kasih.`
+)}"
 >
 
 🟢
