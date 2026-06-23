@@ -725,18 +725,11 @@ display:block;
 
 
 .sticky-post-btn{
-box-shadow:
-0 6px 0 #333,
-0 10px 20px rgba(0,0,0,.25);
-
-transition:.15s;
-
-}
-
-.btn-3d:active{
-
-transform:translateY(6px);
-
-box-shadow:yellow;
-
+box-shadow:0 3px 6px rgba(0,0,0,.25);
+background:#000;
+color:#fff;
+padding:15px 25px;
+font-weight:bold;
+white-space:nowrap;
+  
 }
