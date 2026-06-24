@@ -743,5 +743,6 @@ object-fit:contain;
 .wa-icon{
 width:20px;
 height:20px;
-object-fit:contain;
+display:block;
+flex-shrink:0;
 }
