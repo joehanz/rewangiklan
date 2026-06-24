@@ -322,9 +322,7 @@ href="tel:${phone}"
 </a>
 
 <a
-style="width:20px;
-height:20px;
-object-fit:contain;"
+class="wa-btn"
 target="_blank"
 href="https://wa.me/${phone}?text=${encodeURIComponent(
 `Halo.
