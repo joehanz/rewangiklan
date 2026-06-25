@@ -288,10 +288,6 @@ ${safe(ad.title)}
 
 <div class="ad-desc">
 
-/* =========================
-DESKRIPSI + AUTO LINK
-========================= */
-
 ${makeLinks(ad.description)}
 
 </div>
