@@ -314,6 +314,21 @@ margin-bottom:12px;
 color:#333;
 }
 
+/* =========================
+LINK WEBSITE DI DESKRIPSI
+========================= */
+
+.ad-desc a{
+color:#66ccff;
+text-decoration:none;
+font-weight:500;
+}
+
+.ad-desc a:hover{
+color:#7fd3ff;
+text-decoration:none;
+}
+
 .ad-meta{
 display:flex;
 flex-wrap:wrap;
