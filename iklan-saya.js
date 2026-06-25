@@ -145,6 +145,145 @@ document.getElementById(
 "deleteBtn"
 );
 
+const editBtn =
+document.getElementById(
+"editBtn"
+);
+
+editBtn.addEventListener(
+"click",
+()=>{
+
+resultBox.innerHTML =
+
+`
+<div style="
+padding:20px;
+border:1px solid #ddd;
+border-radius:8px;
+">
+
+<h3>Edit Iklan</h3>
+
+<input
+id="editTitle"
+value="${ad.title}"
+style="
+width:100%;
+padding:10px;
+margin-bottom:10px;
+">
+
+<input
+id="editCategory"
+value="${ad.category}"
+style="
+width:100%;
+padding:10px;
+margin-bottom:10px;
+">
+
+<input
+id="editLocation"
+value="${ad.location}"
+style="
+width:100%;
+padding:10px;
+margin-bottom:10px;
+">
+
+<textarea
+id="editDescription"
+style="
+width:100%;
+height:120px;
+padding:10px;
+margin-bottom:10px;
+"
+>${ad.description}</textarea>
+
+<button
+id="saveEditBtn"
+class="submit-btn"
+>
+SIMPAN PERUBAHAN
+</button>
+
+</div>
+`;
+
+const saveBtn =
+document.getElementById(
+"saveEditBtn"
+);
+
+saveBtn.addEventListener(
+"click",
+async ()=>{
+
+const title =
+document.getElementById(
+"editTitle"
+).value;
+
+const category =
+document.getElementById(
+"editCategory"
+).value;
+
+const location =
+document.getElementById(
+"editLocation"
+).value;
+
+const description =
+document.getElementById(
+"editDescription"
+).value;
+
+const res =
+await fetch(
+
+API_URL +
+"?action=updateAd" +
+"&id=" +
+encodeURIComponent(ad.id) +
+"&secret_code=" +
+encodeURIComponent(secretCode) +
+"&title=" +
+encodeURIComponent(title) +
+"&category=" +
+encodeURIComponent(category) +
+"&location=" +
+encodeURIComponent(location) +
+"&description=" +
+encodeURIComponent(description)
+
+);
+
+const data =
+await res.json();
+
+if(!data.success){
+
+alert(
+data.error ||
+"Gagal menyimpan"
+);
+
+return;
+
+}
+
+alert(
+"Iklan berhasil diperbarui"
+);
+
+});
+
+}
+);
+
 deleteBtn.addEventListener(
 "click",
 async ()=>{
