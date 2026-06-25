@@ -504,7 +504,64 @@ await res.json();
 if(result.success){
 
 status.innerHTML =
-"Iklan berhasil dipasang.";
+
+`
+
+<div style="
+padding:15px;
+background:#e8fff0;
+border:2px solid #28a745;
+line-height:1.8;
+">
+
+<b>
+✅ Iklan berhasil dipasang
+</b>
+
+<br><br>
+
+<b>ID Iklan:</b>
+
+<br>
+
+${result.id}
+
+<br><br>
+
+<b>Kode Kelola:</b>
+
+<br>
+
+<span style="
+font-size:22px;
+font-weight:bold;
+color:#d60000;
+letter-spacing:2px;
+">
+
+${result.secret_code}
+
+</span>
+
+<br><br>
+
+<b>
+Simpan kode ini baik-baik.
+</b>
+
+<br>
+
+Kode diperlukan untuk
+mengedit atau menghapus iklan.
+
+<br>
+
+Kami tidak dapat
+menampilkan kembali kode ini.
+
+</div>
+
+`;
 
 document
 .getElementById(
@@ -521,13 +578,28 @@ document
 count.textContent =
 "0 / 250";
 
+imageBase64 = "";
+
 }else{
 
 status.innerHTML =
-result.error;
+
+`
+
+<div style="
+padding:15px;
+background:#fff2f2;
+border:2px solid #dc3545;
+">
+
+❌ ${result.error}
+
+</div>
+
+`;
 
 }
-
+  
 document
 .getElementById(
 "adForm"
