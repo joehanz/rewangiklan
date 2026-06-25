@@ -151,20 +151,72 @@ HAPUS IKLAN
 </div>
 `;
 
+const deleteBtn =
+document.getElementById(
+"deleteBtn"
+);
+
+deleteBtn.addEventListener(
+"click",
+async ()=>{
+
+const ok =
+confirm(
+"Yakin ingin menghapus iklan ini?"
+);
+
+if(!ok)
+return;
+
+try{
+
+const res =
+await fetch(
+
+API_URL +
+"?action=deleteAd" +
+"&id=" +
+encodeURIComponent(ad.id) +
+"&secret_code=" +
+encodeURIComponent(secretCode)
+
+);
+
+const data =
+await res.json();
+
+if(!data.success){
+
+alert(
+data.error ||
+"Gagal menghapus iklan"
+);
+
+return;
+
 }
-catch(err){
 
 resultBox.innerHTML =
 
 `
 <div style="
-padding:15px;
-background:#f8d7da;
-border:1px solid #dc3545;
+padding:20px;
+background:#d4edda;
+border:1px solid #28a745;
+border-radius:8px;
 ">
-Gagal terhubung ke server.
+
+✅ Iklan berhasil dihapus
+
 </div>
 `;
+
+}
+catch(err){
+
+alert(
+"Gagal terhubung ke server"
+);
 
 }
 
