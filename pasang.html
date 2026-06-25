@@ -499,10 +499,34 @@ payload
 );
 
 const result =
-await res.text();
+await res.json();
+
+if(result.success){
 
 status.innerHTML =
 "Iklan berhasil dipasang.";
+
+document
+.getElementById(
+"adForm"
+)
+.reset();
+
+document
+.getElementById(
+"previewImage"
+)
+.src = "";
+
+count.textContent =
+"0 / 250";
+
+}else{
+
+status.innerHTML =
+result.error;
+
+}
 
 document
 .getElementById(
