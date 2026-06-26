@@ -378,7 +378,7 @@ class="status-box"
 
 </main>
 <!-- =========================
-RIGHT SIDEBAR & FOOTER
+RIGHT SIDEBAR
 ========================= -->
 <aside class="right-sidebar">
     <div class="ad300">IKLAN 300x300</div>
@@ -388,90 +388,108 @@ RIGHT SIDEBAR & FOOTER
             <li>Pasang Iklan Gratis</li>
             <li>Tips Aman Transaksi</li>
             <li>Cara Hindari Penipuan</li>
+            <li>Syarat & Ketentuan</li>
+            <li>Hubungi Kami</li>
         </ul>
     </div>
+    <div class="ad300">IKLAN 300x300</div>
+    <div class="side-box">
+        <h3>POPULER</h3>
+        <div id="popularSidebar" class="mini-list"></div>
+    </div>
 </aside>
-</div> <!-- close main wrapper -->
+</div>
 
+<!-- =========================
+FOOTER
+========================= -->
 <div id="mobileAds"></div>
 <div class="footer-banner">BANNER IKLAN FOOTER 728x90</div>
 <footer class="footer">
     <div class="footer-grid">
-        <h4>IKLAN BARIS</h4>
-        <p>Situs iklan gratis untuk semua.</p>
+        <div><h4>IKLAN BARIS</h4><p>Situs iklan gratis untuk semua.</p></div>
+        <div><h4>LINK</h4><ul><li>Beranda</li><li>Pasang Iklan</li><li>Kategori</li><li>Hubungi Kami</li></ul></div>
+        <div><h4>BANTUAN</h4><ul><li>Cara Pasang</li><li>Tips Aman</li><li>Kebijakan</li></ul></div>
+        <div><h4>KONTAK</h4><p>info@domain.com</p><p>WhatsApp: 0812-3456-7890</p></div>
     </div>
 </footer>
 
+<script src="script.js"></script>
 <script>
-/* =========================
-CONFIG & SUBMIT HANDLER
-========================= */
-const API_URL = "https://google.com";
-const desc = document.getElementById("description");
-const count = document.getElementById("charCount");
-let imageBase64 = "";
-
-// Char Counter
-desc.addEventListener("input", () => {
-    count.textContent = desc.value.length + " / 250";
-});
-
-// Image Preview & Convert
-document.getElementById("imageInput").addEventListener("change", async (e) => {
-    const file = e.target.files[0];
-    if(!file) return;
-    imageBase64 = await convertToWebP(file);
-    document.getElementById("previewImage").src = imageBase64;
-});
-
-function convertToWebP(file){
-    return new Promise((resolve)=>{
-        const reader = new FileReader();
-        reader.onload = function(ev){
-            const img = new Image();
-            img.onload = function(){
-                const canvas = document.createElement("canvas");
-                canvas.width = 200; canvas.height = 150;
-                const ctx = canvas.getContext("2d");
-                ctx.drawImage(img, 0, 0, 200, 150);
-                resolve(canvas.toDataURL("image/webp", 0.60));
-            };
-            img.src = ev.target.result;
-        };
-        reader.readAsDataURL(file);
+    /* === CONFIG & SUBMIT (Ringkasan Logika Backend) === */
+    const API_URL = "https://google.com";
+    
+    // Logika Hitung Karakter
+    const desc = document.getElementById("description");
+    const count = document.getElementById("charCount");
+    desc.addEventListener("input", () => {
+        count.textContent = desc.value.length + " / 250";
     });
-}
 
-// Submit Handling
-document.getElementById("adForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const status = document.getElementById("statusBox");
-    status.innerHTML = "Mengirim iklan...";
-
-    const payload = {
-        title: document.getElementById("title").value,
-        category: document.getElementById("category").value,
-        location: document.getElementById("location").value,
-        whatsapp: document.getElementById("whatsapp").value,
-        description: document.getElementById("description").value,
-        image: imageBase64,
-        date: new Date().toISOString()
-    };
-
-    try{
-        const res = await fetch(API_URL, {method:"POST", body:JSON.stringify(payload)});
-        const result = await res.json();
-        if(result.success){
-            status.innerHTML = `<div style="padding:15px;background:#e8fff0;border:2px solid #28a745;">? Iklan berhasil dipasang. ID: ${result.id}</div>`;
-            document.getElementById("adForm").reset();
-            document.getElementById("previewImage").src = "";
-            count.textContent = "0 / 250";
-        }
-    } catch(err){
-        status.innerHTML = "Gagal mengirim iklan.";
-        console.error(err);
+    // Logika Konversi Gambar ke WebP (Base64)
+    let imageBase64 = "";
+    document.getElementById("imageInput").addEventListener("change", handleImage);
+    async function handleImage(e){
+        const file = e.target.files[0];
+        if(!file) return;
+        const webp = await convertToWebP(file);
+        imageBase64 = webp;
+        document.getElementById("previewImage").src = webp;
     }
-});
+
+    function convertToWebP(file){
+        return new Promise((resolve)=>{
+            const reader = new FileReader();
+            reader.onload = function(ev){
+                const img = new Image();
+                img.onload = function(){
+                    const canvas = document.createElement("canvas");
+                    canvas.width = 200; canvas.height = 150;
+                    const ctx = canvas.getContext("2d");
+                    ctx.drawImage(img, 0, 0, 200, 150);
+                    resolve(canvas.toDataURL("image/webp", 0.60));
+                };
+                img.src = ev.target.result;
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    // Logika Pengiriman Data (API POST)
+    document.getElementById("adForm").addEventListener("submit", submitAd);
+    async function submitAd(e){
+        e.preventDefault();
+        const status = document.getElementById("statusBox");
+        status.innerHTML = "Mengirim iklan...";
+        
+        const payload = {
+            title: document.getElementById("title").value,
+            category: document.getElementById("category").value,
+            location: document.getElementById("location").value,
+            whatsapp: document.getElementById("whatsapp").value,
+            description: document.getElementById("description").value,
+            image: imageBase64,
+            date: new Date().toISOString()
+        };
+
+        try {
+            const res = await fetch(API_URL, {method:"POST", body:JSON.stringify(payload)});
+            const result = await res.json();
+            if(result.success){
+                alert("? IKLAN BERHASIL DIPASANG\n\nID: " + result.id + "\n\nKode Kelola: " + result.secret_code);
+                status.innerHTML = `<div style="padding:15px; background:#e8fff0; border:2px solid #28a745;"><b>? Iklan berhasil dipasang</b><br>ID: ${result.id}<br>Kode Kelola: ${result.secret_code}</div>`;
+                document.getElementById("adForm").reset();
+                document.getElementById("previewImage").src = "";
+                count.textContent = "0 / 250";
+                imageBase64 = "";
+            } else {
+                status.innerHTML = `<div style="padding:15px; background:#fff2f2; border:2px solid #dc3545;">? ${result.error}</div>`;
+            }
+        } catch(err) {
+            status.innerHTML = "Gagal mengirim iklan.";
+            console.error(err);
+        }
+    }
 </script>
 </body>
 </html>
