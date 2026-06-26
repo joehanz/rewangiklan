@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>
+      Iklan Baris | Wahana Jual Beli, Properti, Kendaraan, Lowongan Dan Lain -
+      Lain
+    </title>
+    <meta
+      name="description"
+      content="Pasang iklan baris gratis Indonesia. Jual beli barang bekas, properti, kendaraan, elektronik, lowongan kerja, jasa, hewan peliharaan dan berbagai kebutuhan lainnya."
+    />
+    <meta
+      name="keywords"
+      content="iklan baris gratis,jual beli online,pasang iklan gratis,jual mobil,jual motor,jual rumah,properti,lowongan kerja,hewan peliharaan,jual elektronik"
+    />
+    <meta
+      name="robots"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    />
+    <meta name="author" content="Iklan Baris" />
+    <meta name="theme-color" content="#000000" />
+    <link
+      rel="canonical"
+      href="https://joehanz.github.io/iklanbaris/index.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Iklan Baris Gratis Indonesia" />
+    <meta
+      property="og:description"
+      content="Pasang iklan gratis dan temukan berbagai produk, jasa, properti, kendaraan dan lowongan kerja di seluruh Indonesia."
+    />
+    <meta
+      property="og:url"
+      content="https://joehanz.github.io/iklanbaris/index.html"
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/joehanz/iklanbaris/refs/heads/main/iklanbaris3.png"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Iklan Baris Gratis Indonesia" />
+    <meta
+      name="twitter:description"
+      content="Pasang iklan gratis dan temukan berbagai produk serta jasa dari seluruh Indonesia."
+    />
+    <meta
+      name="twitter:image"
+      content="https://raw.githubusercontent.com/joehanz/iklanbaris/refs/heads/main/iklanbaris3.png"
+    />
+
+    <meta
+      property="og:image"
+      content="https://joehanz.github.io/iklanbaris/iklanbaris3.png"
+    />
+    <meta
+      name="twitter:image"
+      content="https://joehanz.github.io/iklanbaris/iklanbaris3.png"
+    />
+
+    <link
+      rel="icon"
+      href="https://raw.githubusercontent.com/joehanz/iklanbaris/refs/heads/main/iklanbaris2.jpg"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- =========================
+HEADER
+========================= -->
+
+    <header class="top-header">
+      <div class="logo-box">
+        <h1>REWANG IKLAN</h1>
+
+        <p>Iklan Baris Gratis, Tanpa Daftar Langsung Tayang!</p>
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Cari iklan..." />
+
+        <select id="categoryFilter">
+          <option value="">Semua Kategori</option>
+        </select>
+
+        <button id="searchBtn">Cari</button>
+      </div>
+
+      <a href="pasang.html" class="post-btn"> TOMBOL PASANG IKLAN </a>
+    </header>
+
+    <!-- =========================
+MENU
+========================= -->
+
+    <nav class="main-menu">
+      <a href="#"> Semua Kategori </a>
+
+      <a href="#"> Elektronik </a>
+
+      <a href="#"> Kendaraan </a>
+
+      <a href="#"> Properti </a>
+
+      <a href="#"> Lowongan </a>
+
+      <a href="#"> Hobi </a>
+
+      <a href="#"> Jasa </a>
+
+      <a href="#"> Hewan </a>
+
+      <a href="#"> Lainnya </a>
+    </nav>
+
+    <!-- =========================
+HERO
+========================= -->
+
+    <section id="hero" class="hero">
+      <div class="hero-overlay">
+        <h2>Jual Beli Barang & Jasa Dengan Mudah</h2>
+
+        <p>Kontak Pengiklan Juga Gampang</p>
+      </div>
+    </section>
+
+    <!-- =========================
+STICKY BANNER
+========================= -->
+
+    <div id="stickyBanner" class="sticky-banner">
+      <a href="pasang.html" class="sticky-post-btn"> TOMBOL PASANG IKLAN </a>
+    </div>
+
+    <!-- =========================
+LAYOUT
+========================= -->
+
+    <div class="page-wrap">
+      <!-- =========================
+LEFT SIDEBAR
+========================= -->
+
+      <aside class="left-sidebar">
+        <div
+          class="ad300"
+          onclick="window.open('https://tukarfollow.web.id','_blank')"
+        >
+          <img
+            src="https://raw.githubusercontent.com/joehanz/rewangiklan/refs/heads/main/image/banner-tukarfollow.webp"
+            alt="Streaming Online"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="side-box">
+          <h3>KATEGORI</h3>
+
+          <ul id="sidebarCategories"></ul>
+        </div>
+
+        <div
+          class="ad300"
+          onclick="window.open('https://caturbangunsentosa.blogspot.com/','_blank')"
+        >
+          <img
+            src="https://raw.githubusercontent.com/joehanz/rewangiklan/refs/heads/main/image/banner-cbs.webp"
+            alt="Image Converter"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="side-box">
+          <h3>TERBARU</h3>
+
+          <div id="latestSidebar" class="mini-list"></div>
+        </div>
+      </aside>
+
+      <!-- =========================
+CONTENT
+========================= -->
+
+      <main class="content">
+        <div class="section-title">IKLAN TERBARU</div>
+
+        <div id="adsContainer" class="ads-container"></div>
+
+        <div id="pagination" class="pagination"></div>
+      </main>
+
+      <!-- =========================
+RIGHT SIDEBAR
+========================= -->
+
+      <aside class="right-sidebar">
+        <div class="ad300">IKLAN 300x300</div>
+
+        <div class="side-box">
+          <h3>INFO</h3>
+
+          <ul class="info-list">
+            <li>Pasang Iklan Gratis</li>
+
+            <li>Tips Aman Transaksi</li>
+
+            <li>Cara Hindari Penipuan</li>
+
+            <li>Syarat & Ketentuan</li>
+
+            <li>Hubungi Kami</li>
+          </ul>
+        </div>
+
+        <div class="ad300">IKLAN 300x300</div>
+
+        <div class="side-box">
+          <h3>POPULER</h3>
+
+          <div id="popularSidebar" class="mini-list"></div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- =========================
+FOOTER BANNER
+========================= -->
+    <div id="mobileAds"></div>
+
+    <div class="footer-banner">BANNER IKLAN FOOTER 728x90</div>
+
+    <!-- =========================
+FOOTER
+========================= -->
+
+    <footer class="footer">
+      <div class="footer-grid">
+        <div>
+          <h4>IKLAN BARIS</h4>
+
+          <p>Situs iklan gratis untuk semua.</p>
+        </div>
+
+        <div>
+          <h4>LINK</h4>
+
+          <ul>
+            <li>Beranda</li>
+
+            <li>Pasang Iklan</li>
+
+            <li>Kategori</li>
+
+            <li>Hubungi Kami</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>BANTUAN</h4>
+
+          <ul>
+            <li>Cara Pasang</li>
+
+            <li>Tips Aman</li>
+
+            <li>Kebijakan</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>KONTAK</h4>
+
+          <p>info@domain.com</p>
+
+          <p>WhatsApp: 0812-3456-7890</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
