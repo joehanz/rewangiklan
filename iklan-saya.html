@@ -1,87 +1,192 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>
+      Iklan Baris | Wahana Jual Beli, Properti, Kendaraan, Lowongan Dan Lain -
+      Lain
+    </title>
+    <meta
+      name="description"
+      content="Pasang iklan baris gratis Indonesia. Jual beli barang bekas, properti, kendaraan, elektronik, lowongan kerja, jasa, hewan peliharaan dan berbagai kebutuhan lainnya."
+    />
+    <meta
+      name="keywords"
+      content="iklan baris gratis,jual beli online,pasang iklan gratis,jual mobil,jual motor,jual rumah,properti,lowongan kerja,hewan peliharaan,jual elektronik"
+    />
+    <meta
+      name="robots"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    />
+    <meta name="author" content="Iklan Baris" />
+    <meta name="theme-color" content="#000000" />
+    <link
+      rel="canonical"
+      href="https://joehanz.github.io/iklanbaris/index.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Iklan Baris Gratis Indonesia" />
+    <meta
+      property="og:description"
+      content="Pasang iklan gratis dan temukan berbagai produk, jasa, properti, kendaraan dan lowongan kerja di seluruh Indonesia."
+    />
+    <meta
+      property="og:url"
+      content="https://joehanz.github.io/iklanbaris/index.html"
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/joehanz/iklanbaris/refs/heads/main/iklanbaris3.png"
+    />
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Iklan Baris Gratis Indonesia" />
+    <meta
+      name="twitter:description"
+      content="Pasang iklan gratis dan temukan berbagai produk serta jasa dari seluruh Indonesia."
+    />
+    <meta
+      name="twitter:image"
+      content="https://raw.githubusercontent.com/joehanz/iklanbaris/refs/heads/main/iklanbaris3.png"
+    />
 
-<title>Iklan Saya</title>
+    <meta
+      property="og:image"
+      content="https://joehanz.github.io/iklanbaris/iklanbaris3.png"
+    />
+    <meta
+      name="twitter:image"
+      content="https://joehanz.github.io/iklanbaris/iklanbaris3.png"
+    />
 
-<link rel="stylesheet" href="style.css">
+    <link
+      rel="icon"
+      href="https://raw.githubusercontent.com/joehanz/iklanbaris/refs/heads/main/iklanbaris2.jpg"
+    />
 
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- =========================
+HEADER
+========================= -->
 
-<div class="form-page">
+    <header class="top-header">
+      <div class="logo-box">
+        <h1>REWANG IKLAN</h1>
 
-<div class="form-card">
+        <p>Iklan Baris Gratis, Tanpa Daftar Langsung Tayang!</p>
+      </div>
 
-<h2>
+      <div class="footer-banner">BANNER IKLAN 468x60</div>
 
-IKLAN SAYA
+      <a href="index.html" class="post-btn"> LIHAT IKLAN TERPASANG </a>
+    </header>
 
-</h2>
+    <!-- =========================
+MENU
+========================= -->
 
-<div style="padding:25px;">
+    <nav class="main-menu">
+      <h2 style="color: white;">FORM PASANG IKLAN BARIS GRATIS</h2>
+    </nav>
 
-<div class="form-group">
+    <!-- =========================
+LAYOUT
+========================= -->
 
-<label>
+    <main>
+      <div class="form-page">
+        <div class="form-card">
+          <h2>IKLAN SAYA</h2>
 
-ID Iklan
+          <div style="padding:25px;">
+            <div class="form-group">
+              <label> ID Iklan </label>
 
-</label>
+              <input type="text" id="adId" placeholder="Contoh: IKL000123" />
+            </div>
 
-<input
-type="text"
-id="adId"
-placeholder="Contoh: IKL000123"
->
+            <div class="form-group">
+              <label> Kode Kelola </label>
 
-</div>
+              <input
+                type="text"
+                id="secretCode"
+                placeholder="Contoh: Q8M7X2KP"
+              />
+            </div>
 
-<div class="form-group">
+            <button id="checkBtn" class="submit-btn">TAMPILKAN IKLAN</button>
 
-<label>
+            <div
+              id="resultBox"
+              class="status-box"
+              style="margin-top:20px;"
+            ></div>
+          </div>
+        </div>
+      </div>
 
-Kode Kelola
+      <script src="iklan-saya.js"></script>
+    </main>
 
-</label>
+    <!-- =========================
+FOOTER BANNER
+========================= -->
+    <div id="mobileAds"></div>
 
-<input
-type="text"
-id="secretCode"
-placeholder="Contoh: Q8M7X2KP"
->
+    <div class="footer-banner">BANNER IKLAN FOOTER 728x90</div>
 
-</div>
+    <!-- =========================
+FOOTER
+========================= -->
 
-<button
-id="checkBtn"
-class="submit-btn"
->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div>
+          <h4>IKLAN BARIS</h4>
 
-TAMPILKAN IKLAN
+          <p>Situs iklan gratis untuk semua.</p>
+        </div>
 
-</button>
+        <div>
+          <h4>LINK</h4>
 
-<div
-id="resultBox"
-class="status-box"
-style="margin-top:20px;"
->
+          <ul>
+            <li>Beranda</li>
 
-</div>
+            <li>Pasang Iklan</li>
 
-</div>
+            <li>Kategori</li>
 
-</div>
+            <li>Hubungi Kami</li>
+          </ul>
+        </div>
 
-</div>
+        <div>
+          <h4>BANTUAN</h4>
 
-<script src="iklan-saya.js"></script>
+          <ul>
+            <li>Cara Pasang</li>
 
-</body>
+            <li>Tips Aman</li>
+
+            <li>Kebijakan</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>KONTAK</h4>
+
+          <p>info@domain.com</p>
+
+          <p>WhatsApp: 0812-3456-7890</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
-
-
