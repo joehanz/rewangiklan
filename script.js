@@ -722,3 +722,31 @@ ${url}
 
 }
 
+document
+.querySelectorAll(".main-menu a")
+.forEach(link=>{
+
+link.addEventListener(
+"click",
+function(e){
+
+e.preventDefault();
+
+const value =
+this.dataset.category;
+
+const select =
+document.getElementById(
+"categoryFilter"
+);
+
+select.value = value;
+
+// jalankan filter yang sudah ada
+select.dispatchEvent(
+new Event("change")
+);
+
+});
+
+});
