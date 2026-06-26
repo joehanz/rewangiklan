@@ -764,14 +764,29 @@ flex-shrink:0;
 
 
 .contact-buttons{
+
 display:flex;
-gap:10px;
 flex-wrap:wrap;
+gap:10px;
+
 }
 
 .call-btn,
-.wa-btn{
+.wa-btn,
+.manage-btn{
+
+flex:1 1 160px;
+
 display:flex;
 align-items:center;
-gap:6px;
+justify-content:center;
+
+gap:8px;
+
+padding:10px;
+
+border-radius:8px;
+
+text-decoration:none;
+
 }
