@@ -1,641 +1,633 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>
+      Iklan Baris | Wahana Jual Beli, Properti, Kendaraan, Lowongan Dan Lain -
+      Lain
+    </title>
+    <meta
+      name="description"
+      content="Pasang iklan baris gratis Indonesia. Jual beli barang bekas, properti, kendaraan, elektronik, lowongan kerja, jasa, hewan peliharaan dan berbagai kebutuhan lainnya."
+    />
+    <meta
+      name="keywords"
+      content="iklan baris gratis,jual beli online,pasang iklan gratis,jual mobil,jual motor,jual rumah,properti,lowongan kerja,hewan peliharaan,jual elektronik"
+    />
+    <meta
+      name="robots"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+    />
+    <meta name="author" content="Iklan Baris" />
+    <meta name="theme-color" content="#000000" />
+    <link
+      rel="canonical"
+      href="https://joehanz.github.io/iklanbaris/index.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Iklan Baris Gratis Indonesia" />
+    <meta
+      property="og:description"
+      content="Pasang iklan gratis dan temukan berbagai produk, jasa, properti, kendaraan dan lowongan kerja di seluruh Indonesia."
+    />
+    <meta
+      property="og:url"
+      content="https://joehanz.github.io/iklanbaris/index.html"
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/joehanz/iklanbaris/refs/heads/main/iklanbaris3.png"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Iklan Baris Gratis Indonesia" />
+    <meta
+      name="twitter:description"
+      content="Pasang iklan gratis dan temukan berbagai produk serta jasa dari seluruh Indonesia."
+    />
+    <meta
+      name="twitter:image"
+      content="https://raw.githubusercontent.com/joehanz/iklanbaris/refs/heads/main/iklanbaris3.png"
+    />
+
+    <meta
+      property="og:image"
+      content="https://joehanz.github.io/iklanbaris/iklanbaris3.png"
+    />
+    <meta
+      name="twitter:image"
+      content="https://joehanz.github.io/iklanbaris/iklanbaris3.png"
+    />
+
+    <link
+      rel="icon"
+      href="https://raw.githubusercontent.com/joehanz/iklanbaris/refs/heads/main/iklanbaris2.jpg"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- =========================
+HEADER
+========================= -->
+
+    <header class="top-header">
+      <div class="logo-box">
+        <h1>REWANG IKLAN</h1>
+
+        <p>Iklan Baris Gratis, Tanpa Daftar Langsung Tayang!</p>
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Cari iklan..." />
+
+        <select id="categoryFilter">
+          <option value="">Semua Kategori</option>
+        </select>
+
+        <button id="searchBtn">??</button>
+      </div>
+
+      <a href="pasang.html" class="post-btn"> TOMBOL PASANG IKLAN </a>
+    </header>
+
+    <!-- =========================
+MENU
+========================= -->
+
+    <nav class="main-menu">
+      <a href="#"> Semua Kategori </a>
+
+      <a href="#"> Elektronik </a>
+
+      <a href="#"> Kendaraan </a>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+      <a href="#"> Properti </a>
 
-<title>Iklan Baris | Wahana Jual Beli, Properti, Kendaraan, Lowongan Dan Lain - Lain</title>
+      <a href="#"> Lowongan </a>
 
-<meta name="description" content="Pasang iklan baris gratis Indonesia. Jual beli barang bekas, properti, kendaraan, elektronik, lowongan kerja, jasa, hewan peliharaan dan berbagai kebutuhan lainnya.">
+      <a href="#"> Hobi </a>
 
-<meta name="keywords" content="iklan baris gratis,jual beli online,pasang iklan gratis,jual mobil,jual motor,jual rumah,properti,lowongan kerja,hewan peliharaan,jual elektronik">
+      <a href="#"> Jasa </a>
+
+      <a href="#"> Hewan </a>
 
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<meta name="googlebot" content="index,follow">
-<meta name="bingbot" content="index,follow">
+      <a href="#"> Lainnya </a>
+    </nav>
 
-<meta name="author" content="Iklan Baris">
+    <!-- =========================
+STICKY BANNER
+========================= -->
 
-<meta name="theme-color" content="#000000">
+    <div id="stickyBanner" class="sticky-banner">
+      <a href="index.html" class="sticky-post-btn"> TOMBOL PASANG IKLAN </a>
+    </div>
 
-<link rel="canonical" href="https://joehanz.github.io/iklanbaris/">
+    <!-- =========================
+LAYOUT
+========================= -->
 
-<!-- Open Graph -->
+      <main>
+        <div class="form-page" >
+          <div class="form-card">
+            <h2>FORM PASANG IKLAN BARIS GRATIS</h2>
 
-<meta property="og:locale" content="id_ID">
+            <form id="adForm">
+              <div class="form-layout">
+                <div class="upload-side">
+                  <label class="upload-title"> Foto Produk </label>
 
-<meta property="og:type" content="website">
+                  <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/*"
+                    required
+                  />
 
-<meta property="og:site_name" content="Iklan Baris">
+                  <p class="help">
+                    JPG/PNG otomatis diubah ke WebP dan dikompres.
+                  </p>
 
-<meta property="og:title" content="Iklan Baris Gratis Indonesia">
+                  <div id="previewBox" class="preview-box">
+                    <img id="previewImage" />
+                  </div>
+                </div>
 
-<meta property="og:description" content="Pasang iklan gratis dan temukan berbagai produk, jasa, properti, kendaraan dan lowongan kerja di seluruh Indonesia.">
+                <div class="data-side">
+                  <div class="form-group">
+                    <label> Judul Iklan </label>
 
-<meta property="og:url" content="https://joehanz.github.io/iklanbaris/">
+                    <input type="text" id="title" maxlength="80" required />
+                  </div>
 
-<meta property="og:image" content="https://joehanz.github.io/iklanbaris/iklanbaris3.png">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label> Kategori </label>
 
-<meta property="og:image:secure_url" content="https://joehanz.github.io/iklanbaris/iklanbaris3.png">
+                      <select id="category" required>
+                        <option value="">Pilih Kategori</option>
 
-<meta property="og:image:width" content="1200">
+                        <option>Elektronik</option>
+                        <option>Kendaraan</option>
+                        <option>Properti</option>
+                        <option>Lowongan</option>
+                        <option>Hobi</option>
+                        <option>Jasa</option>
+                        <option>Hewan</option>
+                        <option>Lainnya</option>
+                      </select>
+                    </div>
 
-<meta property="og:image:height" content="630">
+                    <div class="form-group">
+                      <label> Lokasi </label>
 
-<meta property="og:image:type" content="image/png">
+                      <input type="text" id="location" required />
+                    </div>
+                  </div>
 
-<!-- Twitter -->
+                  <div class="form-group">
+                    <label> Nomor Telepon / WhatsApp </label>
 
-<meta name="twitter:card" content="summary_large_image">
+                    <input
+                      type="text"
+                      id="whatsapp"
+                      placeholder="Contoh: 6281234567890"
+                      required
+                    />
+                  </div>
 
-<meta name="twitter:title" content="Iklan Baris Gratis Indonesia">
+                  <div class="form-group">
+                    <label> Deskripsi Iklan </label>
 
-<meta name="twitter:description" content="Pasang iklan gratis dan temukan berbagai produk serta jasa dari seluruh Indonesia.">
+                    <textarea
+                      id="description"
+                      maxlength="250"
+                      required
+                    ></textarea>
 
-<meta name="twitter:image" content="https://joehanz.github.io/iklanbaris/iklanbaris3.png">
+                    <div id="charCount" class="char-count">0 / 250</div>
+                  </div>
+                </div>
+              </div>
 
-<!-- Favicon -->
+              <button type="submit" class="submit-btn">PASANG IKLAN</button>
+            </form>
 
-<link rel="icon" type="image/png" href="https://joehanz.github.io/iklanbaris/iklanbaris2.jpg">
+            <div id="statusBox" class="status-box"></div>
+          </div>
 
-<!-- JSON-LD -->
+        <script>
 
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"WebSite",
-"name":"Iklan Baris",
-"url":"https://joehanz.github.io/iklanbaris/",
-"description":"Portal iklan baris gratis Indonesia untuk jual beli barang, properti, kendaraan, jasa dan lowongan kerja.",
-"potentialAction":{
-"@type":"SearchAction",
-"target":"https://joehanz.github.io/iklanbaris/?q={search_term_string}",
-"query-input":"required name=search_term_string"
-}
-}
-</script>
+          /* =========================
+          CONFIG
+          ========================= */
 
-<link rel="stylesheet" href="style.css">
+          const API_URL =
+          "https://script.google.com/macros/s/AKfycbzwXBjQbOoHjb5btAFrja7llCgXT1KahBrI2-OyrfERGYy2XXkeXJxNNhdKyupqI6TK7w/exec";
 
-</head>
-<body>
+          /* =========================
+          CHAR COUNT
+          ========================= */
 
-<header class="top-header">
+          const desc =
+          document.getElementById(
+          "description"
+          );
 
-<div class="logo-box">
+          const count =
+          document.getElementById(
+          "charCount"
+          );
 
-<h1>IKLAN BARIS</h1>
+          desc.addEventListener(
+          "input",
+          ()=>{
 
-<p>Pasang Gratis, Jual Cepat!</p>
+          count.textContent =
+          desc.value.length +
+          " / 250";
 
-</div>
+          }
+          );
 
-<a
-href="index.html"
-class="post-btn"
->
+          /* =========================
+          PREVIEW
+          ========================= */
 
-KEMBALI KE BERANDA
+          let imageBase64 = "";
 
-</a>
+          document
+          .getElementById(
+          "imageInput"
+          )
+          .addEventListener(
+          "change",
+          handleImage
+          );
 
-</header>
+          async function handleImage(e){
 
-<div class="form-page">
+          const file =
+          e.target.files[0];
 
-<div class="form-card">
+          if(!file)
+          return;
 
-<h2>
+          const webp =
+          await convertToWebP(
+          file
+          );
 
-FORM PASANG IKLAN BARIS GRATIS
+          imageBase64 =
+          webp;
 
-</h2>
+          document
+          .getElementById(
+          "previewImage"
+          )
+          .src = webp;
 
-<form id="adForm">
+          }
 
-<div class="form-layout">
+          /* =========================
+          WEBP CONVERT
+          ========================= */
 
-<div class="upload-side">
+          function convertToWebP(file){
 
-<label class="upload-title">
-Foto Produk
-</label>
+          return new Promise(
+          (resolve)=>{
 
-<input
-type="file"
-id="imageInput"
-accept="image/*"
-required
+          const reader =
+          new FileReader();
 
->
+          reader.onload =
+          function(ev){
 
-<p class="help">
-JPG/PNG otomatis diubah ke WebP dan dikompres.
-</p>
+          const img =
+          new Image();
 
-<div
-id="previewBox"
-class="preview-box"
->
+          img.onload =
+          function(){
 
-<img
-id="previewImage"
+          const width = 200;
+          const height = 150;
 
->
+          const canvas =
+          document.createElement(
+          "canvas"
+          );
 
-</div>
+          canvas.width =
+          width;
 
-</div>
+          canvas.height =
+          height;
 
-<div class="data-side">
+          const ctx =
+          canvas.getContext(
+          "2d"
+          );
 
-<div class="form-group">
+          ctx.drawImage(
+          img,
+          0,
+          0,
+          width,
+          height
+          );
 
-<label>
-Judul Iklan
-</label>
+          const data =
+          canvas.toDataURL(
+          "image/webp",
+          0.60
+          );
 
-<input
-type="text"
-id="title"
-maxlength="80"
-required
+          resolve(data);
 
->
+          };
 
-</div>
+          img.src =
+          ev.target.result;
 
-<div class="form-row">
+          };
 
-<div class="form-group">
+          reader.readAsDataURL(
+          file
+          );
 
-<label>
-Kategori
-</label>
+          }
+          );
 
-<select
-id="category"
-required
+          }
 
->
+          /* =========================
+          SUBMIT
+          ========================= */
 
-<option value="">
-Pilih Kategori
-</option>
+          document
+          .getElementById(
+          "adForm"
+          )
+          .addEventListener(
+          "submit",
+          submitAd
+          );
 
-<option>Elektronik</option>
-<option>Kendaraan</option>
-<option>Properti</option>
-<option>Lowongan</option>
-<option>Hobi</option>
-<option>Jasa</option>
-<option>Hewan</option>
-<option>Lainnya</option>
+          async function submitAd(e){
 
-</select>
+          e.preventDefault();
 
-</div>
+          const status =
+          document.getElementById(
+          "statusBox"
+          );
 
-<div class="form-group">
+          status.innerHTML =
+          "Mengirim iklan...";
 
-<label>
-Lokasi
-</label>
+          const payload = {
 
-<input
-type="text"
-id="location"
-required
+          title:
+          document.getElementById(
+          "title"
+          ).value,
 
->
+          category:
+          document.getElementById(
+          "category"
+          ).value,
 
-</div>
+          location:
+          document.getElementById(
+          "location"
+          ).value,
 
-</div>
+          whatsapp:
+          document.getElementById(
+          "whatsapp"
+          ).value,
 
-<div class="form-group">
+          description:
+          document.getElementById(
+          "description"
+          ).value,
 
-<label>
-Nomor Telepon / WhatsApp
-</label>
+          image:
+          imageBase64,
 
-<input
-type="text"
-id="whatsapp"
-placeholder="Contoh: 6281234567890"
-required
->
+          date:
+          new Date().toISOString()
 
-</div>
-  
-<div class="form-group">
+          };
 
-<label>
-Deskripsi Iklan
-</label>
+          try{
 
-<textarea
-id="description"
-maxlength="250"
-required
-></textarea>
+          const res =
+          await fetch(
+          API_URL,
+          {
+          method:"POST",
+          body:JSON.stringify(
+          payload
+          )
+          }
+          );
 
-<div
-id="charCount"
-class="char-count"
->
+          const result =
+          await res.json();
 
-0 / 250
+          if(result.success){
 
-</div>
+          alert(
 
-</div>
+          "? IKLAN BERHASIL DIPASANG\n\n" +
 
-</div>
+          "ID IKLAN:\n" +
+          result.id +
 
-</div>
+          "\n\nKODE KELOLA:\n" +
+          result.secret_code +
 
-<button
-type="submit"
-class="submit-btn"
+          "\n\nSimpan kode ini baik-baik."
 
->
+          );
 
-PASANG IKLAN
+          }
 
-</button>
+          if(result.success){
 
+          status.innerHTML =
 
-</form>
+          `
 
-<div
-id="statusBox"
-class="status-box"
->
+          <div style="
+          padding:15px;
+          background:#e8fff0;
+          border:2px solid #28a745;
+          line-height:1.8;
+          ">
 
-</div>
+          <b>
+          ? Iklan berhasil dipasang
+          </b>
 
-</div>
+          <br><br>
 
-</div>
+          <b>ID Iklan:</b>
 
-<script>
+          <br>
 
-/* =========================
-CONFIG
-========================= */
+          ${result.id}
 
-const API_URL =
-"https://script.google.com/macros/s/AKfycbzwXBjQbOoHjb5btAFrja7llCgXT1KahBrI2-OyrfERGYy2XXkeXJxNNhdKyupqI6TK7w/exec";
-  
-/* =========================
-CHAR COUNT
-========================= */
+          <br><br>
 
-const desc =
-document.getElementById(
-"description"
-);
+          <b>Kode Kelola:</b>
 
-const count =
-document.getElementById(
-"charCount"
-);
+          <br>
 
-desc.addEventListener(
-"input",
-()=>{
+          <span style="
+          font-size:22px;
+          font-weight:bold;
+          color:#d60000;
+          letter-spacing:2px;
+          ">
 
-count.textContent =
-desc.value.length +
-" / 250";
+          ${result.secret_code}
 
-}
-);
+          </span>
 
-/* =========================
-PREVIEW
-========================= */
+          <br><br>
 
-let imageBase64 = "";
+          <b>
+          Simpan kode ini baik-baik.
+          </b>
 
-document
-.getElementById(
-"imageInput"
-)
-.addEventListener(
-"change",
-handleImage
-);
+          <br>
 
-async function handleImage(e){
+          Kode diperlukan untuk
+          mengedit atau menghapus iklan.
 
-const file =
-e.target.files[0];
+          <br>
 
-if(!file)
-return;
+          Kami tidak dapat
+          menampilkan kembali kode ini.
 
-const webp =
-await convertToWebP(
-file
-);
+          </div>
 
-imageBase64 =
-webp;
+          `;
 
-document
-.getElementById(
-"previewImage"
-)
-.src = webp;
 
-}
+          imageBase64 = "";
 
-/* =========================
-WEBP CONVERT
-========================= */
+          }else{
 
-function convertToWebP(file){
+          status.innerHTML =
 
-return new Promise(
-(resolve)=>{
+          `
 
-const reader =
-new FileReader();
+          <div style="
+          padding:15px;
+          background:#fff2f2;
+          border:2px solid #dc3545;
+          ">
 
-reader.onload =
-function(ev){
+          ? ${result.error}
 
-const img =
-new Image();
+          </div>
 
-img.onload =
-function(){
+          `;
 
-const width = 200;
-const height = 150;
+          }
 
-const canvas =
-document.createElement(
-"canvas"
-);
+          document
+          .getElementById(
+          "adForm"
+          )
+          .reset();
 
-canvas.width =
-width;
+          document
+          .getElementById(
+          "previewImage"
+          )
+          .src = "";
 
-canvas.height =
-height;
+          count.textContent =
+          "0 / 250";
 
-const ctx =
-canvas.getContext(
-"2d"
-);
+          }
+          catch(err){
 
-ctx.drawImage(
-img,
-0,
-0,
-width,
-height
-);
+          status.innerHTML =
+          "Gagal mengirim iklan.";
 
-const data =
-canvas.toDataURL(
-"image/webp",
-0.60
-);
+          console.error(
+          err
+          );
 
-resolve(data);
+          }
 
-};
+          }
+        </script>
+      </main>
+    </div>
 
-img.src =
-ev.target.result;
+    <!-- =========================
+FOOTER BANNER
+========================= -->
+    <div id="mobileAds"></div>
 
-};
+    <div class="footer-banner">BANNER IKLAN FOOTER 728x90</div>
 
-reader.readAsDataURL(
-file
-);
+    <!-- =========================
+FOOTER
+========================= -->
 
-}
-);
+    <footer class="footer">
+      <div class="footer-grid">
+        <div>
+          <h4>IKLAN BARIS</h4>
 
-}
-  
-/* =========================
-SUBMIT
-========================= */
+          <p>Situs iklan gratis untuk semua.</p>
+        </div>
 
-document
-.getElementById(
-"adForm"
-)
-.addEventListener(
-"submit",
-submitAd
-);
+        <div>
+          <h4>LINK</h4>
 
-async function submitAd(e){
+          <ul>
+            <li>Beranda</li>
 
-e.preventDefault();
+            <li>Pasang Iklan</li>
 
-const status =
-document.getElementById(
-"statusBox"
-);
+            <li>Kategori</li>
 
-status.innerHTML =
-"Mengirim iklan...";
+            <li>Hubungi Kami</li>
+          </ul>
+        </div>
 
-const payload = {
+        <div>
+          <h4>BANTUAN</h4>
 
-title:
-document.getElementById(
-"title"
-).value,
+          <ul>
+            <li>Cara Pasang</li>
 
-category:
-document.getElementById(
-"category"
-).value,
+            <li>Tips Aman</li>
 
-location:
-document.getElementById(
-"location"
-).value,
+            <li>Kebijakan</li>
+          </ul>
+        </div>
 
-whatsapp:
-document.getElementById(
-"whatsapp"
-).value,
+        <div>
+          <h4>KONTAK</h4>
 
-description:
-document.getElementById(
-"description"
-).value,
+          <p>info@domain.com</p>
 
-image:
-imageBase64,
+          <p>WhatsApp: 0812-3456-7890</p>
+        </div>
+      </div>
+    </footer>
 
-date:
-new Date().toISOString()
-
-};
-
-try{
-
-const res =
-await fetch(
-API_URL,
-{
-method:"POST",
-body:JSON.stringify(
-payload
-)
-}
-);
-
-const result =
-await res.json();
-
-if(result.success){
-
-alert(
-
-"? IKLAN BERHASIL DIPASANG\n\n" +
-
-"ID IKLAN:\n" +
-result.id +
-
-"\n\nKODE KELOLA:\n" +
-result.secret_code +
-
-"\n\nSimpan kode ini baik-baik."
-
-);
-
-}
-
-if(result.success){
-
-status.innerHTML =
-
-`
-
-<div style="
-padding:15px;
-background:#e8fff0;
-border:2px solid #28a745;
-line-height:1.8;
-">
-
-<b>
-? Iklan berhasil dipasang
-</b>
-
-<br><br>
-
-<b>ID Iklan:</b>
-
-<br>
-
-${result.id}
-
-<br><br>
-
-<b>Kode Kelola:</b>
-
-<br>
-
-<span style="
-font-size:22px;
-font-weight:bold;
-color:#d60000;
-letter-spacing:2px;
-">
-
-${result.secret_code}
-
-</span>
-
-<br><br>
-
-<b>
-Simpan kode ini baik-baik.
-</b>
-
-<br>
-
-Kode diperlukan untuk
-mengedit atau menghapus iklan.
-
-<br>
-
-Kami tidak dapat
-menampilkan kembali kode ini.
-
-</div>
-
-`;
-
-
-imageBase64 = "";
-
-}else{
-
-status.innerHTML =
-
-`
-
-<div style="
-padding:15px;
-background:#fff2f2;
-border:2px solid #dc3545;
-">
-
-? ${result.error}
-
-</div>
-
-`;
-
-}
-  
-document
-.getElementById(
-"adForm"
-)
-.reset();
-
-document
-.getElementById(
-"previewImage"
-)
-.src = "";
-
-count.textContent =
-"0 / 250";
-
-}
-catch(err){
-
-status.innerHTML =
-"Gagal mengirim iklan.";
-
-console.error(
-err
-);
-
-}
-
-}
-
-</script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
-
-
