@@ -9,22 +9,22 @@
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="author" content="Iklan Baris">
   <meta name="theme-color" content="#000000">
-  <link rel="canonical" href="https://joehanz.github.io/iklanbaris/index.html">
+  <link rel="canonical" href="https://github.io">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Iklan Baris Gratis Indonesia">
   <meta property="og:description" content="Pasang iklan gratis dan temukan berbagai produk, jasa, properti, kendaraan dan lowongan kerja di seluruh Indonesia.">
-  <meta property="og:url" content="https://joehanz.github.io/iklanbaris/index.html">
-  <meta property="og:image" content="https://raw.githubusercontent.com/joehanz/iklanbaris/refs/heads/main/iklanbaris3.png">
+  <meta property="og:url" content="https://github.io">
+  <meta property="og:image" content="https://githubusercontent.com">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Iklan Baris Gratis Indonesia">
   <meta name="twitter:description" content="Pasang iklan gratis dan temukan berbagai produk serta jasa dari seluruh Indonesia.">
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/joehanz/iklanbaris/refs/heads/main/iklanbaris3.png">
+  <meta name="twitter:image" content="https://githubusercontent.com">
 
-  <meta property="og:image" content="https://joehanz.github.io/iklanbaris/iklanbaris3.png">
-  <meta name="twitter:image" content="https://joehanz.github.io/iklanbaris/iklanbaris3.png">
+  <meta property="og:image" content="https://github.io">
+  <meta name="twitter:image" content="https://github.io">
 
-  <link rel="icon" href="https://raw.githubusercontent.com/joehanz/iklanbaris/refs/heads/main/iklanbaris2.jpg">
+  <link rel="icon" href="https://githubusercontent.com">
 
   <link rel="stylesheet" href="style.css">
 
@@ -156,7 +156,7 @@ LEFT SIDEBAR
 
 <div class="ad300" onclick="window.open('https://tukarfollow.web.id','_blank')">
   <img
-    src="https://raw.githubusercontent.com/joehanz/rewangiklan/refs/heads/main/image/banner-tukarfollow.webp"
+    src="https://githubusercontent.com"
     alt="Streaming Online"
     loading="lazy"
   >
@@ -174,9 +174,9 @@ KATEGORI
 
 </div>
 
-<div class="ad300" onclick="window.open('https://caturbangunsentosa.blogspot.com/','_blank')">
+<div class="ad300" onclick="window.open('https://blogspot.com')">
   <img
-    src="https://raw.githubusercontent.com/joehanz/rewangiklan/refs/heads/main/image/banner-cbs.webp"
+    src="https://githubusercontent.com"
     alt="Image Converter"
     loading="lazy"
   >
@@ -211,196 +211,267 @@ CONTENT
 FORM PASANG IKLAN BARIS GRATIS
 
 </div>
+<form id="adForm">
 
+<div class="form-layout">
 
+<div class="upload-side">
 
+<label class="upload-title">
+Foto Produk
+</label>
 
+<input
+type="file"
+id="imageInput"
+accept="image/*"
+required
 
-</main>
+>
 
-<!-- =========================
-RIGHT SIDEBAR
-========================= -->
-
-<aside class="right-sidebar">
-
-<div class="ad300">
-
-IKLAN
-300x300
-
-</div>
-
-<div class="side-box">
-
-<h3>
-INFO
-</h3>
-
-<ul class="info-list">
-
-<li>
-Pasang Iklan Gratis
-</li>
-
-<li>
-Tips Aman Transaksi
-</li>
-
-<li>
-Cara Hindari Penipuan
-</li>
-
-<li>
-Syarat & Ketentuan
-</li>
-
-<li>
-Hubungi Kami
-</li>
-
-</ul>
-
-</div>
-
-<div class="ad300">
-
-IKLAN
-300x300
-
-</div>
-
-<div class="side-box">
-
-<h3>
-POPULER
-</h3>
+<p class="help">
+JPG/PNG otomatis diubah ke WebP dan dikompres.
+</p>
 
 <div
-id="popularSidebar"
-class="mini-list"
+id="previewBox"
+class="preview-box"
+>
+
+<img
+id="previewImage"
+
 >
 
 </div>
 
 </div>
 
-</aside>
+<div class="data-side">
+
+<div class="form-group">
+
+<label>
+Judul Iklan
+</label>
+
+<input
+type="text"
+id="title"
+maxlength="80"
+required
+
+>
 
 </div>
 
-<!-- =========================
-FOOTER BANNER
-========================= -->
-<div id="mobileAds"></div>
-  
+<div class="form-row">
 
-<div class="footer-banner">
+<div class="form-group">
 
-BANNER IKLAN FOOTER 728x90
-
-</div>
-
-<!-- =========================
-FOOTER
-========================= -->
-
-<footer class="footer">
-
-<div class="footer-grid">
-
-<div>
-
-<h4>
-IKLAN BARIS
-</h4>
-
-<p>
-
-Situs iklan gratis untuk semua.
-
-</p>
-
-</div>
-
-<div>
-
-<h4>
-LINK
-</h4>
-
-<ul>
-
-<li>
-Beranda
-</li>
-
-<li>
-Pasang Iklan
-</li>
-
-<li>
+<label>
 Kategori
-</li>
+</label>
 
-<li>
-Hubungi Kami
-</li>
+<select
+id="category"
+required
 
-</ul>
+>
 
-</div>
+<option value="">
+Pilih Kategori
+</option>
 
-<div>
+<option>Elektronik</option>
+<option>Kendaraan</option>
+<option>Properti</option>
+<option>Lowongan</option>
+<option>Hobi</option>
+<option>Jasa</option>
+<option>Hewan</option>
+<option>Lainnya</option>
 
-<h4>
-BANTUAN
-</h4>
-
-<ul>
-
-<li>
-Cara Pasang
-</li>
-
-<li>
-Tips Aman
-</li>
-
-<li>
-Kebijakan
-</li>
-
-</ul>
+</select>
 
 </div>
 
-<div>
+<div class="form-group">
 
-<h4>
-KONTAK
-</h4>
+<label>
+Lokasi
+</label>
 
-<p>
+<input
+type="text"
+id="location"
+required
 
-info@domain.com
-
-</p>
-
-<p>
-
-WhatsApp:
-0812-3456-7890
-
-</p>
+>
 
 </div>
 
 </div>
 
+<div class="form-group">
+
+<label>
+Nomor Telepon / WhatsApp
+</label>
+
+<input
+type="text"
+id="whatsapp"
+placeholder="Contoh: 6281234567890"
+required
+>
+
+</div>
+  
+<div class="form-group">
+
+<label>
+Deskripsi Iklan
+</label>
+
+<textarea
+id="description"
+maxlength="250"
+required
+></textarea>
+
+<div
+id="charCount"
+class="char-count"
+>
+
+0 / 250
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<button
+type="submit"
+class="submit-btn"
+
+>
+
+PASANG IKLAN
+
+</button>
+
+
+</form>
+
+<div
+id="statusBox"
+class="status-box"
+>
+
+</div>
+
+
+</main>
+<!-- =========================
+RIGHT SIDEBAR & FOOTER
+========================= -->
+<aside class="right-sidebar">
+    <div class="ad300">IKLAN 300x300</div>
+    <div class="side-box">
+        <h3>INFO</h3>
+        <ul class="info-list">
+            <li>Pasang Iklan Gratis</li>
+            <li>Tips Aman Transaksi</li>
+            <li>Cara Hindari Penipuan</li>
+        </ul>
+    </div>
+</aside>
+</div> <!-- close main wrapper -->
+
+<div id="mobileAds"></div>
+<div class="footer-banner">BANNER IKLAN FOOTER 728x90</div>
+<footer class="footer">
+    <div class="footer-grid">
+        <h4>IKLAN BARIS</h4>
+        <p>Situs iklan gratis untuk semua.</p>
+    </div>
 </footer>
 
-<script src="script.js"></script>
+<script>
+/* =========================
+CONFIG & SUBMIT HANDLER
+========================= */
+const API_URL = "https://google.com";
+const desc = document.getElementById("description");
+const count = document.getElementById("charCount");
+let imageBase64 = "";
 
+// Char Counter
+desc.addEventListener("input", () => {
+    count.textContent = desc.value.length + " / 250";
+});
+
+// Image Preview & Convert
+document.getElementById("imageInput").addEventListener("change", async (e) => {
+    const file = e.target.files[0];
+    if(!file) return;
+    imageBase64 = await convertToWebP(file);
+    document.getElementById("previewImage").src = imageBase64;
+});
+
+function convertToWebP(file){
+    return new Promise((resolve)=>{
+        const reader = new FileReader();
+        reader.onload = function(ev){
+            const img = new Image();
+            img.onload = function(){
+                const canvas = document.createElement("canvas");
+                canvas.width = 200; canvas.height = 150;
+                const ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, 200, 150);
+                resolve(canvas.toDataURL("image/webp", 0.60));
+            };
+            img.src = ev.target.result;
+        };
+        reader.readAsDataURL(file);
+    });
+}
+
+// Submit Handling
+document.getElementById("adForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const status = document.getElementById("statusBox");
+    status.innerHTML = "Mengirim iklan...";
+
+    const payload = {
+        title: document.getElementById("title").value,
+        category: document.getElementById("category").value,
+        location: document.getElementById("location").value,
+        whatsapp: document.getElementById("whatsapp").value,
+        description: document.getElementById("description").value,
+        image: imageBase64,
+        date: new Date().toISOString()
+    };
+
+    try{
+        const res = await fetch(API_URL, {method:"POST", body:JSON.stringify(payload)});
+        const result = await res.json();
+        if(result.success){
+            status.innerHTML = `<div style="padding:15px;background:#e8fff0;border:2px solid #28a745;">? Iklan berhasil dipasang. ID: ${result.id}</div>`;
+            document.getElementById("adForm").reset();
+            document.getElementById("previewImage").src = "";
+            count.textContent = "0 / 250";
+        }
+    } catch(err){
+        status.innerHTML = "Gagal mengirim iklan.";
+        console.error(err);
+    }
+});
+</script>
 </body>
 </html>
