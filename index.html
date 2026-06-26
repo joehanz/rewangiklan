@@ -82,7 +82,7 @@ HEADER
       <div class="search-box">
         <input type="text" id="searchInput" placeholder="Cari iklan..." />
 
-        <select id="categoryFilter">
+        <select id="categoryFilter" style="display:none;">
           <option value="">Semua Kategori</option>
         </select>
 
@@ -97,24 +97,26 @@ MENU
 ========================= -->
 
     <nav class="main-menu">
-      <a href="#"> Semua Kategori </a>
 
-      <a href="#"> Elektronik </a>
+<a href="#" data-category="">Semua Kategori</a>
 
-      <a href="#"> Kendaraan </a>
+<a href="#" data-category="Elektronik">Elektronik</a>
 
-      <a href="#"> Properti </a>
+<a href="#" data-category="Kendaraan">Kendaraan</a>
 
-      <a href="#"> Lowongan </a>
+<a href="#" data-category="Properti">Properti</a>
 
-      <a href="#"> Hobi </a>
+<a href="#" data-category="Lowongan">Lowongan</a>
 
-      <a href="#"> Jasa </a>
+<a href="#" data-category="Hobi">Hobi</a>
 
-      <a href="#"> Hewan </a>
+<a href="#" data-category="Jasa">Jasa</a>
 
-      <a href="#"> Lainnya </a>
-    </nav>
+<a href="#" data-category="Hewan">Hewan</a>
+
+<a href="#" data-category="Lainnya">Lainnya</a>
+
+</nav>
 
     <!-- =========================
 HERO
