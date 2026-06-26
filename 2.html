@@ -211,13 +211,14 @@ CONTENT
 FORM PASANG IKLAN BARIS GRATIS
 
 </div>
-<form id="adForm">
+<form id="adForm" style="width: 100%; max-width: 900px; margin: 0 auto;">
 
-<div class="form-layout">
+<div class="form-layout" style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; justify-content: space-between;">
 
-<div class="upload-side">
+<!-- SISI KIRI: UPLOAD FOTO (Dibatasi agar tidak terlalu lebar) -->
+<div class="upload-side" style="flex: 1; min-width: 280px; max-width: 320px; box-sizing: border-box;">
 
-<label class="upload-title">
+<label class="upload-title" style="display: block; font-weight: bold; margin-bottom: 8px;">
 Foto Produk
 </label>
 
@@ -226,32 +227,34 @@ type="file"
 id="imageInput"
 accept="image/*"
 required
-
+style="width: 100%; margin-bottom: 10px;"
 >
 
-<p class="help">
+<p class="help" style="font-size: 12px; color: #666; margin-top: 5px;">
 JPG/PNG otomatis diubah ke WebP dan dikompres.
 </p>
 
 <div
 id="previewBox"
 class="preview-box"
+style="width: 100%; max-width: 200px; margin-top: 15px; border: 1px dashed #ccc; border-radius: 4px; padding: 5px; text-align: center;"
 >
 
 <img
 id="previewImage"
-
+style="max-width: 100%; height: auto; display: block; margin: 0 auto;"
 >
 
 </div>
 
 </div>
 
-<div class="data-side">
+<!-- SISI KANAN: ISI POSTINGAN FORM DATA -->
+<div class="data-side" style="flex: 1.5; min-width: 300px; box-sizing: border-box;">
 
-<div class="form-group">
+<div class="form-group" style="margin-bottom: 15px;">
 
-<label>
+<label style="display: block; font-weight: bold; margin-bottom: 5px;">
 Judul Iklan
 </label>
 
@@ -260,23 +263,23 @@ type="text"
 id="title"
 maxlength="80"
 required
-
+style="width: 100%; padding: 8px; box-sizing: border-box;"
 >
 
 </div>
 
-<div class="form-row">
+<div class="form-row" style="display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap;">
 
-<div class="form-group">
+<div class="form-group" style="flex: 1; min-width: 140px;">
 
-<label>
+<label style="display: block; font-weight: bold; margin-bottom: 5px;">
 Kategori
 </label>
 
 <select
 id="category"
 required
-
+style="width: 100%; padding: 8px; box-sizing: border-box;"
 >
 
 <option value="">
@@ -296,9 +299,9 @@ Pilih Kategori
 
 </div>
 
-<div class="form-group">
+<div class="form-group" style="flex: 1; min-width: 140px;">
 
-<label>
+<label style="display: block; font-weight: bold; margin-bottom: 5px;">
 Lokasi
 </label>
 
@@ -306,16 +309,16 @@ Lokasi
 type="text"
 id="location"
 required
-
+style="width: 100%; padding: 8px; box-sizing: border-box;"
 >
 
 </div>
 
 </div>
 
-<div class="form-group">
+<div class="form-group" style="margin-bottom: 15px;">
 
-<label>
+<label style="display: block; font-weight: bold; margin-bottom: 5px;">
 Nomor Telepon / WhatsApp
 </label>
 
@@ -324,13 +327,14 @@ type="text"
 id="whatsapp"
 placeholder="Contoh: 6281234567890"
 required
+style="width: 100%; padding: 8px; box-sizing: border-box;"
 >
 
 </div>
   
-<div class="form-group">
+<div class="form-group" style="margin-bottom: 15px;">
 
-<label>
+<label style="display: block; font-weight: bold; margin-bottom: 5px;">
 Deskripsi Iklan
 </label>
 
@@ -338,11 +342,13 @@ Deskripsi Iklan
 id="description"
 maxlength="250"
 required
+style="width: 100%; height: 100px; padding: 8px; box-sizing: border-box; resize: vertical;"
 ></textarea>
 
 <div
 id="charCount"
 class="char-count"
+style="text-align: right; font-size: 12px; color: #666; margin-top: 2px;"
 >
 
 0 / 250
@@ -355,28 +361,30 @@ class="char-count"
 
 </div>
 
+<!-- TOMBOL SUBMIT (Lebar penuh di bawah kedua kolom) -->
 <button
 type="submit"
 class="submit-btn"
-
+style="width: 100%; padding: 12px; background-color: #007bff; color: white; border: none; border-radius: 4px; font-weight: bold; font-size: 16px; cursor: pointer; margin-top: 20px;"
 >
 
 PASANG IKLAN
 
 </button>
 
-
 </form>
 
 <div
 id="statusBox"
 class="status-box"
+style="margin-top: 15px;"
 >
 
 </div>
 
-
 </main>
+
+  
 <!-- =========================
 RIGHT SIDEBAR
 ========================= -->
