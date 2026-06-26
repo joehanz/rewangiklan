@@ -775,7 +775,7 @@ gap:10px;
 .wa-btn,
 .manage-btn{
 
-flex:1 1 100px;
+flex:1 1 80px;
 
 display:flex;
 align-items:center;
@@ -783,9 +783,9 @@ justify-content:center;
 
 gap:4px;
 
-padding:4px;
+padding:2px;
 
-border-radius:8px;
+border-radius:4px;
 
 text-decoration:none;
 
