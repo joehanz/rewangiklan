@@ -296,14 +296,14 @@ ${makeLinks(ad.description)}
 
 <span>
 
-??
+📍 
 ${safe(ad.location)}
 
 </span>
 
 <span>
 
-??
+📅
 ${formatDate(
 ad.date
 )}
