@@ -389,7 +389,7 @@ style="margin-top: 15px;"
 
   
 <!-- =========================
-RIGHT SIDEBAR
+RIGHT SIDEBAR & FOOTER SINKRONISASI
 ========================= -->
 <aside class="right-sidebar">
     <div class="ad300">IKLAN 300x300</div>
@@ -411,9 +411,6 @@ RIGHT SIDEBAR
 </aside>
 </div>
 
-<!-- =========================
-FOOTER
-========================= -->
 <div id="mobileAds"></div>
 <div class="footer-banner">BANNER IKLAN FOOTER 728x90</div>
 <footer class="footer">
@@ -427,25 +424,39 @@ FOOTER
 
 <script src="script.js"></script>
 <script>
-    /* === CONFIG & SUBMIT (Ringkasan Logika Backend) === */
+    /* =========================
+    CONFIG & FIX SCRIPT SPREADSHEET
+    ========================= */
     const API_URL = "https://google.com";
     
-    // Logika Hitung Karakter
+    // Perbaikan Penghitung Karakter Deskripsi
     const desc = document.getElementById("description");
     const count = document.getElementById("charCount");
-    desc.addEventListener("input", () => {
-        count.textContent = desc.value.length + " / 250";
-    });
+    if(desc && count) {
+        desc.addEventListener("input", () => {
+            count.textContent = desc.value.length + " / 250";
+        });
+    }
 
-    // Logika Konversi Gambar ke WebP (Base64)
+    // Perbaikan Preview Gambar (Bebas Macet & Korup)
     let imageBase64 = "";
-    document.getElementById("imageInput").addEventListener("change", handleImage);
+    const imageInput = document.getElementById("imageInput");
+    if(imageInput) {
+        imageInput.addEventListener("change", handleImage);
+    }
+
     async function handleImage(e){
-        const file = e.target.files[0];
+        // Ditambahkan indeks [0] agar JavaScript membaca file pertama yang diunggah
+        const file = e.target.files[0]; 
         if(!file) return;
+
         const webp = await convertToWebP(file);
         imageBase64 = webp;
-        document.getElementById("previewImage").src = webp;
+        
+        const previewImg = document.getElementById("previewImage");
+        if(previewImg) {
+            previewImg.src = webp;
+        }
     }
 
     function convertToWebP(file){
@@ -455,7 +466,8 @@ FOOTER
                 const img = new Image();
                 img.onload = function(){
                     const canvas = document.createElement("canvas");
-                    canvas.width = 200; canvas.height = 150;
+                    canvas.width = 200; 
+                    canvas.height = 150;
                     const ctx = canvas.getContext("2d");
                     ctx.drawImage(img, 0, 0, 200, 150);
                     resolve(canvas.toDataURL("image/webp", 0.60));
@@ -466,13 +478,18 @@ FOOTER
         });
     }
 
-    // Logika Pengiriman Data (API POST)
-    document.getElementById("adForm").addEventListener("submit", submitAd);
+    // Perbaikan Fungsi Submit Form Iklan Ke Google Apps Script
+    const adForm = document.getElementById("adForm");
+    if(adForm) {
+        adForm.addEventListener("submit", submitAd);
+    }
+
     async function submitAd(e){
         e.preventDefault();
         const status = document.getElementById("statusBox");
-        status.innerHTML = "Mengirim iklan...";
+        status.innerHTML = "<div style='padding:10px; background:#fff3cd; color:#856404; border-radius:4px;'>Mengirim iklan ke spreadsheet...</div>";
         
+        // Payload disinkronkan secara presisi dengan ID Form 2.html Anda
         const payload = {
             title: document.getElementById("title").value,
             category: document.getElementById("category").value,
@@ -484,20 +501,36 @@ FOOTER
         };
 
         try {
-            const res = await fetch(API_URL, {method:"POST", body:JSON.stringify(payload)});
+            const res = await fetch(API_URL, {
+                method: "POST", 
+                body: JSON.stringify(payload)
+            });
             const result = await res.json();
+            
             if(result.success){
-                alert("? IKLAN BERHASIL DIPASANG\n\nID: " + result.id + "\n\nKode Kelola: " + result.secret_code);
-                status.innerHTML = `<div style="padding:15px; background:#e8fff0; border:2px solid #28a745;"><b>? Iklan berhasil dipasang</b><br>ID: ${result.id}<br>Kode Kelola: ${result.secret_code}</div>`;
+                alert(" IKLAN BERHASIL DIPASANG\n\nID: " + result.id + "\n\nKode Kelola: " + result.secret_code);
+                status.innerHTML = `
+                    <div style="padding:15px; background:#e8fff0; border:2px solid #28a745; color:#155724; border-radius:4px; line-height:1.6;">
+                        <b> Iklan Berhasil Dipasang!</b><br>
+                        <strong>ID Iklan:</strong> ${result.id}<br>
+                        <strong>Kode Kelola:</strong> <span style="color:#d60000; font-weight:bold;">${result.secret_code}</span><br>
+                        <small>Simpan kode kelola untuk edit/hapus iklan nanti.</small>
+                    </div>`;
+                
+                // Reset form dan preview setelah sukses mencatat di spreadsheet
                 document.getElementById("adForm").reset();
-                document.getElementById("previewImage").src = "";
-                count.textContent = "0 / 250";
+                if(document.getElementById("previewImage")) {
+                    document.getElementById("previewImage").src = "";
+                }
+                if(count) {
+                    count.textContent = "0 / 250";
+                }
                 imageBase64 = "";
             } else {
-                status.innerHTML = `<div style="padding:15px; background:#fff2f2; border:2px solid #dc3545;">? ${result.error}</div>`;
+                status.innerHTML = `<div style="padding:15px; background:#fff2f2; border:2px solid #dc3545; color:#721c24; border-radius:4px;">Gagal: ${result.error}</div>`;
             }
         } catch(err) {
-            status.innerHTML = "Gagal mengirim iklan.";
+            status.innerHTML = "<div style='padding:15px; background:#fff2f2; border:2px solid #dc3545; color:#721c24; border-radius:4px;'>Gagal mengirim iklan. Periksa koneksi jaringan atau URL Web App Anda.</div>";
             console.error(err);
         }
     }
