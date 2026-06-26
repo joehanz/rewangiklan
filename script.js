@@ -296,14 +296,14 @@ ${makeLinks(ad.description)}
 
 <span>
 
-📍
+??
 ${safe(ad.location)}
 
 </span>
 
 <span>
 
-🕒
+??
 ${formatDate(
 ad.date
 )}
@@ -319,7 +319,7 @@ class="call-btn"
 href="tel:${phone}"
 >
 
-📞
+??
 <span>Telepon</span>
 
 </a>
@@ -350,16 +350,6 @@ alt="WhatsApp"
 >
 
 <span>WhatsApp</span>
-
-</a>
-
-<a
-class="manage-btn"
-href="iklan-saya.html"
->
-
-⚙️
-<span>Kelola</span>
 
 </a>
 
@@ -721,3 +711,4 @@ ${url}
 );
 
 }
+
