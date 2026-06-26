@@ -532,10 +532,6 @@ result.secret_code +
 
 );
 
-}
-
-if(result.success){
-
 status.innerHTML =
 
 `
@@ -596,8 +592,22 @@ menampilkan kembali kode ini.
 
 `;
 
-
 imageBase64 = "";
+
+document
+.getElementById(
+"adForm"
+)
+.reset();
+
+document
+.getElementById(
+"previewImage"
+)
+.src = "";
+
+count.textContent =
+"0 / 250";
 
 }else{
 
@@ -616,23 +626,6 @@ border:2px solid #dc3545;
 </div>
 
 `;
-
-}
-  
-document
-.getElementById(
-"adForm"
-)
-.reset();
-
-document
-.getElementById(
-"previewImage"
-)
-.src = "";
-
-count.textContent =
-"0 / 250";
 
 }
 catch(err){
