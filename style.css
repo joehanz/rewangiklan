@@ -39,12 +39,18 @@ background:#fff;
 border-bottom:1px solid #ddd;
 }
 
-.logo-box{
-width:230px;
-background:#000;
-color:#fff;
-padding:18px;
+.logo-box {
+  width: 230px;
+  /* Mencampur warna hitam transparan (opacity 85%) di atas gambar agar tulisan tetap kontras */
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+              url("https://raw.githubusercontent.com/joehanz/iklanbaris/refs/heads/main/image/iklanbaris.webp");
+  background-size: cover;       /* Memastikan gambar memenuhi seluruh kotak logo */
+  background-position: center;   /* Mengatur posisi gambar tepat di tengah kotak */
+  background-repeat: no-repeat;  /* Mencegah gambar berulang jika kotak memanjang */
+  color: #fff;
+  padding: 18px;
 }
+
 
 .logo-box h1{
 font-size:42px;
