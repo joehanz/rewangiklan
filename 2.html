@@ -235,155 +235,63 @@ JPG/PNG otomatis diubah ke WebP dan dikompres.
 </p>
 
 <!-- Kontainer pratinjau dibuat mini dengan rasio aspek foto produk standard -->
-<div
-id="previewBox"
-class="preview-box"
-style="width: 100%; height: 135px; border: 1px dashed #bbb; border-radius: 6px; padding: 4px; text-align: center; box-sizing: border-box; background-color: #f9f9f9; display: flex; align-items: center; justify-content: center; overflow: hidden;"
->
+<form id="adForm">
+  <div class="form-layout" style="display: flex; gap: 20px; flex-wrap: wrap;">
+    
+    <!-- SISI KIRI: UPLOAD FOTO (Mungil seukuran index) -->
+    <div class="upload-side" style="flex: 1; max-width: 240px;">
+      <label>Foto Produk</label>
+      <input type="file" id="imageInput" accept="image/*" required style="width: 100%;">
+      <p style="font-size: 11px; color: #666;">Automatis WebP & Kompres</p>
+      
+      <!-- Kotak Preview Mini -->
+      <div id="previewBox" style="width: 100%; height: 135px; border: 1px dashed #bbb; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #f9f9f9; border-radius: 6px;">
+        <img id="previewImage" style="max-width: 100%; max-height: 100%; object-fit: cover;">
+      </div>
+    </div>
 
-<img
-id="previewImage"
-style="max-width: 100%; max-height: 100%; object-fit: cover; display: block; border-radius: 4px;"
-src=""
->
+    <!-- SISI KANAN: DATA POSTINGAN -->
+    <div class="data-side" style="flex: 1.5; min-width: 280px;">
+      <div class="form-group" style="margin-bottom: 10px;">
+        <label>Judul Iklan</label>
+        <input type="text" id="title" maxlength="80" required style="width: 100%; padding: 6px;">
+      </div>
 
-</div>
+      <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+        <div style="flex: 1;">
+          <label>Kategori</label>
+          <select id="category" required style="width: 100%; padding: 6px;">
+            <option value="">Pilih Kategori</option>
+            <option>Elektronik</option><option>Kendaraan</option><option>Properti</option>
+            <option>Lowongan</option><option>Hobi</option><option>Jasa</option>
+            <option>Hewan</option><option>Lainnya</option>
+          </select>
+        </div>
+        <div style="flex: 1;">
+          <label>Lokasi</label>
+          <input type="text" id="location" required style="width: 100%; padding: 6px;">
+        </div>
+      </div>
 
-</div>
+      <div class="form-group" style="margin-bottom: 10px;">
+        <label>Nomor Telepon / WhatsApp</label>
+        <input type="text" id="whatsapp" placeholder="Contoh: 6281234567890" required style="width: 100%; padding: 6px;">
+      </div>
 
+      <div class="form-group">
+        <label>Deskripsi Iklan</label>
+        <textarea id="description" maxlength="250" required style="width: 100%; height: 80px; padding: 6px;"></textarea>
+        <div id="charCount" style="text-align: right; font-size: 12px; color: #666;">0 / 250</div>
+      </div>
+    </div>
 
-<!-- SISI KANAN: ISI POSTINGAN FORM DATA -->
-<div class="data-side" style="flex: 1.5; min-width: 300px; box-sizing: border-box;">
+  </div>
 
-<div class="form-group" style="margin-bottom: 15px;">
-
-<label style="display: block; font-weight: bold; margin-bottom: 5px;">
-Judul Iklan
-</label>
-
-<input
-type="text"
-id="title"
-maxlength="80"
-required
-style="width: 100%; padding: 8px; box-sizing: border-box;"
->
-
-</div>
-
-<div class="form-row" style="display: flex; gap: 15px; margin-bottom: 15px; flex-wrap: wrap;">
-
-<div class="form-group" style="flex: 1; min-width: 140px;">
-
-<label style="display: block; font-weight: bold; margin-bottom: 5px;">
-Kategori
-</label>
-
-<select
-id="category"
-required
-style="width: 100%; padding: 8px; box-sizing: border-box;"
->
-
-<option value="">
-Pilih Kategori
-</option>
-
-<option>Elektronik</option>
-<option>Kendaraan</option>
-<option>Properti</option>
-<option>Lowongan</option>
-<option>Hobi</option>
-<option>Jasa</option>
-<option>Hewan</option>
-<option>Lainnya</option>
-
-</select>
-
-</div>
-
-<div class="form-group" style="flex: 1; min-width: 140px;">
-
-<label style="display: block; font-weight: bold; margin-bottom: 5px;">
-Lokasi
-</label>
-
-<input
-type="text"
-id="location"
-required
-style="width: 100%; padding: 8px; box-sizing: border-box;"
->
-
-</div>
-
-</div>
-
-<div class="form-group" style="margin-bottom: 15px;">
-
-<label style="display: block; font-weight: bold; margin-bottom: 5px;">
-Nomor Telepon / WhatsApp
-</label>
-
-<input
-type="text"
-id="whatsapp"
-placeholder="Contoh: 6281234567890"
-required
-style="width: 100%; padding: 8px; box-sizing: border-box;"
->
-
-</div>
-  
-<div class="form-group" style="margin-bottom: 15px;">
-
-<label style="display: block; font-weight: bold; margin-bottom: 5px;">
-Deskripsi Iklan
-</label>
-
-<textarea
-id="description"
-maxlength="250"
-required
-style="width: 100%; height: 100px; padding: 8px; box-sizing: border-box; resize: vertical;"
-></textarea>
-
-<div
-id="charCount"
-class="char-count"
-style="text-align: right; font-size: 12px; color: #666; margin-top: 2px;"
->
-
-0 / 250
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- TOMBOL SUBMIT (Lebar penuh di bawah kedua kolom) -->
-<button
-type="submit"
-class="submit-btn"
-style="width: 100%; padding: 12px; background-color: #007bff; color: white; border: none; border-radius: 4px; font-weight: bold; font-size: 16px; cursor: pointer; margin-top: 20px;"
->
-
-PASANG IKLAN
-
-</button>
-
+  <button type="submit" class="submit-btn" style="width: 100%; padding: 10px; background: #007bff; color: #fff; border: none; font-weight: bold; margin-top: 15px; cursor: pointer;">PASANG IKLAN</button>
 </form>
 
-<div
-id="statusBox"
-class="status-box"
-style="margin-top: 15px;"
->
+<div id="statusBox" style="margin-top: 10px;"></div>
 
-</div>
 
 </main>
 
@@ -459,113 +367,71 @@ FOOTER BANNER & FOOTER
 
 <!-- TUNGGAL: HANYA ADA SATU BLOK SCRIPT UTAMA UNTUK FORM -->
 <script>
-    // URL Google Apps Script Web App asli dari pasang.html
-    const API_URL = "https://google.com";
+const API_URL = "https://google.com";
+const desc = document.getElementById("description");
+const count = document.getElementById("charCount");
+let imageBase64 = "";
+
+// 1. Hitung Karakter
+desc.addEventListener("input", () => {
+    count.textContent = desc.value.length + " / 250";
+});
+
+// 2. Preview Gambar & Konversi WebP
+document.getElementById("imageInput").addEventListener("change", async (e) => {
+    const file = e.target.files[0];
+    if(!file) return;
     
-    let imageBase64 = "";
-    const desc = document.getElementById("description");
-    const count = document.getElementById("charCount");
+    // Konversi langsung sesuai fungsi pasang.html asli Anda
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+        const img = new Image();
+        img.onload = function() {
+            const canvas = document.createElement("canvas");
+            canvas.width = 200; canvas.height = 150;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0, 200, 150);
+            imageBase64 = canvas.toDataURL("image/webp", 0.60);
+            document.getElementById("previewImage").src = imageBase64; // Pasang ke ID yang benar
+        };
+        img.src = ev.target.result;
+    };
+    reader.readAsDataURL(file);
+});
 
-    // 1. Penghitung Karakter Deskripsi
-    if (desc && count) {
-        desc.addEventListener("input", () => {
-            count.textContent = desc.value.length + " / 250";
-        });
+// 3. Kirim data ke Google Spreadsheet
+document.getElementById("adForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const status = document.getElementById("statusBox");
+    status.innerHTML = "Mengirim iklan...";
+
+    const payload = {
+        title: document.getElementById("title").value,
+        category: document.getElementById("category").value,
+        location: document.getElementById("location").value,
+        whatsapp: document.getElementById("whatsapp").value,
+        description: document.getElementById("description").value,
+        image: imageBase64,
+        date: new Date().toISOString()
+    };
+
+    try {
+        const res = await fetch(API_URL, { method: "POST", body: JSON.stringify(payload) });
+        const result = await res.json();
+        if(result.success) {
+            alert("IKLAN BERHASIL DIPASANG\n\nID: " + result.id);
+            status.innerHTML = `<div style="padding:10px; background:#e8fff0; border:1px solid #28a745;">Iklan Berhasil Dicatat di Spreadsheet!</div>`;
+            document.getElementById("adForm").reset();
+            document.getElementById("previewImage").src = "";
+            count.textContent = "0 / 250";
+            imageBase64 = "";
+        }
+    } catch(err) {
+        status.innerHTML = "Gagal mengirim iklan.";
+        console.error(err);
     }
-
-    // 2. Handler Pemuatan dan Pratinjau Gambar WebP
-    const imageInput = document.getElementById("imageInput");
-    if (imageInput) {
-        imageInput.addEventListener("change", async (e) => {
-            const files = e.target.files;
-            if (!files || files.length === 0) return;
-
-            // Indeks [0] ditambahkan untuk membaca data file pertama
-            const file = files[0]; 
-            const webp = await convertToWebP(file);
-            imageBase64 = webp;
-            
-            const previewImg = document.getElementById("previewImage");
-            if (previewImg) {
-                previewImg.src = webp;
-            }
-        });
-    }
-
-    // Fungsi Pengonversi Format WebP
-    function convertToWebP(file) {
-        return new Promise((resolve) => {
-            const reader = new FileReader();
-            reader.onload = function(ev) {
-                const img = new Image();
-                img.onload = function() {
-                    const canvas = document.createElement("canvas");
-                    canvas.width = 200; 
-                    canvas.height = 150;
-                    const ctx = canvas.getContext("2d");
-                    ctx.drawImage(img, 0, 0, 200, 150);
-                    resolve(canvas.toDataURL("image/webp", 0.60));
-                };
-                img.src = ev.target.result;
-            };
-            reader.readAsDataURL(file);
-        });
-    }
-
-    // 3. Handler Pengiriman Form Iklan ke Spreadsheet
-    const adForm = document.getElementById("adForm");
-    if (adForm) {
-        adForm.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            const status = document.getElementById("statusBox");
-            if (status) {
-                status.innerHTML = "<div style='padding:10px; background:#fff3cd; color:#856404; border-radius:4px; margin-top:10px;'>Mengirim iklan ke spreadsheet...</div>";
-            }
-            
-            const payload = {
-                title: document.getElementById("title").value,
-                category: document.getElementById("category").value,
-                location: document.getElementById("location").value,
-                whatsapp: document.getElementById("whatsapp").value,
-                description: document.getElementById("description").value,
-                image: imageBase64,
-                date: new Date().toISOString()
-            };
-
-            try {
-                const res = await fetch(API_URL, {
-                    method: "POST", 
-                    body: JSON.stringify(payload)
-                });
-                const result = await res.json();
-                
-                if (result.success) {
-                    alert(" IKLAN BERHASIL DIPASANG\n\nID: " + result.id + "\n\nKode Kelola: " + result.secret_code);
-                    if (status) {
-                        status.innerHTML = `
-                            <div style="padding:15px; background:#e8fff0; border:2px solid #28a745; color:#155724; border-radius:4px; line-height:1.6; margin-top:10px;">
-                                <b> Iklan Berhasil Dipasang!</b><br>
-                                <strong>ID Iklan:</strong> ${result.id}<br>
-                                <strong>Kode Kelola:</strong> <span style="color:#d60000; font-weight:bold;">${result.secret_code}</span><br>
-                                <small>Simpan kode kelola untuk mengedit atau menghapus iklan.</small>
-                            </div>`;
-                    }
-                    
-                    // Reset total formulir input data
-                    adForm.reset();
-                    const previewImg = document.getElementById("previewImage");
-                    if (previewImg) previewImg.src = "";
-                    if (count) count.textContent = "0 / 250";
-                    imageBase64 = "";
-                } else {
-                    if (status) status.innerHTML = `<div style="padding:15px; background:#fff2f2; border:2px solid #dc3545; color:#721c24; border-radius:4px; margin-top:10px;">Gagal: ${result.error}</div>`;
-                }
-            } catch (err) {
-                if (status) status.innerHTML = "<div style='padding:15px; background:#fff2f2; border:2px solid #dc3545; color:#721c24; border-radius:4px; margin-top:10px;'>Gagal mengirim iklan. Periksa URL Web App atau koneksi Anda.</div>";
-                console.error(err);
-            }
-        });
-    }
+});
 </script>
+
 </body>
 </html>
