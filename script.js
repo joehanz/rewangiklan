@@ -335,7 +335,7 @@ Saya melihat iklan:
 ${safe(ad.title)}
 
 di situs:
-https://joehanz.github.io/iklanbaris/
+https://rewangiklan.my.id/
 
 Saya tertarik dan ingin mengetahui informasi lebih lanjut.
 
