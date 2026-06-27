@@ -5,4 +5,4 @@ Allow: /
 Disallow: /iklan-saya.html
 Disallow: /pasang.html
 
-Sitemap: https://joehanz.github.io/iklanbaris/sitemap.xml
+Sitemap: https://rewangiklan.my.id/sitemap.xml
